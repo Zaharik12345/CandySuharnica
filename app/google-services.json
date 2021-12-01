@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "61853037995",
+    "project_id": "candysuharnica",
+    "storage_bucket": "candysuharnica.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61853037995:android:f9a5c0c5e05d171c044eee",
+        "android_client_info": {
+          "package_name": "com.zakdroid.candysuharnica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61853037995-ubprnms9hgdsqding29ugjgj6rep2ji1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXLk7GfGwVUhofDrhVqo-N1zFaxXkSuMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61853037995-ubprnms9hgdsqding29ugjgj6rep2ji1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
