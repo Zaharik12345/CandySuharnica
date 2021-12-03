@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/CandySuharnica/app/src/main/res/layout/activity_main.xml" value="0.16077898550724637" />
-        <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/drawable/chip.xml" value="0.35185185185185186" />
-        <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/activity_main.xml" value="0.129981884057971" />
-        <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/catalog_fragment.xml" value="0.4466666666666667" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/basket_icon.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/loading_screen_logo.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/main_catalog_icon.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/profile_of_user_icon.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/search_icon.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/catalog_fragment.xml" value="0.176" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
       </map>
     </option>
   </component>
