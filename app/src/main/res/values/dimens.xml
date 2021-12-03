@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="stroke_width_dimen">2dp</dimen>
+    <dimen name="layout_margin_dimen">8dp</dimen>
+    <dimen name="padding_dimen">8dp</dimen>
+    <dimen name="padding_end_chips_dimen">16dp</dimen>
+</resources>

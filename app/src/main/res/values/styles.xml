@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CandyChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="strokeWidth" >2dp</item>
+        <item name="strokeColor">@color/black</item>
+        <item name="backgroundColor">@color/chip_background_color</item>
+        <item name="cornerRadius">0dp</item>
+    </style>
+
+</resources>
