@@ -7,7 +7,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/layout_margin_dimen"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +41,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars="none"
@@ -48,49 +49,67 @@
         app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
         <com.google.android.material.chip.ChipGroup
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:singleSelection="true"
+            app:checkedChip="@id/allChip"
             android:layout_marginStart="@dimen/layout_margin_dimen"
-            android:paddingEnd="@dimen/padding_end_chips_dimen">
+            android:paddingEnd="@dimen/padding_end_chips_dimen"
+            app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/allChip"
+                style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/CandyChipStyle"
                 android:text="Все" />
 
             <com.google.android.material.chip.Chip
+                style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/CandyChipStyle"
                 android:text="Конфеты" />
 
             <com.google.android.material.chip.Chip
+                style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/CandyChipStyle"
                 android:text="Печеньи" />
 
             <com.google.android.material.chip.Chip
+                style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/CandyChipStyle"
                 android:text="Пироги" />
 
             <com.google.android.material.chip.Chip
+                style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/CandyChipStyle"
                 android:text="Пироженные" />
 
             <com.google.android.material.chip.Chip
+                style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/CandyChipStyle"
                 android:text="Торты" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

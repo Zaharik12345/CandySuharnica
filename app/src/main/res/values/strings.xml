@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Candy Suharnica</string>
     <string name="search_in_the_basket">Поиск по корзине...</string>
+    <string name="catalog">catalog</string>
+    <string name="basket">basket</string>
+    <string name="profile">profile</string>
+    <string name="make_an_order">Оформить заказ</string>
 </resources>
