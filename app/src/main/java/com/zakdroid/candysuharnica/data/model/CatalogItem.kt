@@ -6,7 +6,7 @@ data class CatalogItem(
     val type: String?, //for filter in the groups
     val weight: Int?,
     val imgUrl: String?,
-    val price: Int?,
-    val priceSale: Int?,
+    val price: Double?,
+    val priceSale: Double?,
     val likes: Int?,
 )
