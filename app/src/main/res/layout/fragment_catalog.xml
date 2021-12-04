@@ -33,8 +33,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="12dp"
                 android:background="@android:color/transparent"
-                android:hint="@string/search_in_the_basket"
-                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                android:hint="@string/search_in_the_basket"/>
 
         </LinearLayout>
 
@@ -58,7 +57,6 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/allChip"
-                style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Все" />

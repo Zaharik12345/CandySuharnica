@@ -1,12 +1,12 @@
 package com.zakdroid.candysuharnica.data.model
 
 data class CatalogItem(
-    val id: Int?,
+    val id: String?,
     val name: String?,
     val type: String?, //for filter in the groups
-    val weight: Int?,
+    val weight: String?,
     val imgUrl: String?,
-    val price: Int?,
-    val priceSale: Int?,
-    val likes: Int?,
+    val price: String?,
+    val priceSale: String?,
+    val likes: String?,
 )
