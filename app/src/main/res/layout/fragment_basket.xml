@@ -51,6 +51,7 @@
         app:layout_constraintTop_toBottomOf="@id/materialCardViewSearch" />
 
     <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/view1"
@@ -63,11 +64,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/layout_margin_dimen"
-        app:strokeColor="@color/black"
-        app:strokeWidth="@dimen/stroke_width_dimen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/stroke_width_dimen">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

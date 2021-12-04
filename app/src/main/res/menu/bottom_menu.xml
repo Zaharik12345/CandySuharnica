@@ -2,12 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/catalogFragment"
         android:icon="@drawable/main_catalog_icon"
         android:title="@string/catalog" />
     <item
+        android:id="@+id/basketFragment"
         android:icon="@drawable/basket_icon"
         android:title="@string/basket" />
     <item
+        android:id="@+id/profileFragment"
         android:icon="@drawable/profile_of_user_icon"
         android:title="@string/profile" />
 </menu>

@@ -1,10 +1,11 @@
-package com.zakdroid.candysuharnica
+package com.zakdroid.candysuharnica.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import com.zakdroid.candysuharnica.ui.MainActivity
+import com.zakdroid.candysuharnica.R
+import com.zakdroid.candysuharnica.ui.main.MainActivity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

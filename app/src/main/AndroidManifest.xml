@@ -10,17 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CandySuharnica">
         <activity
-            android:name=".SplashScreen"
+            android:name=".ui.splash.SplashScreen"
             android:exported="true"
             android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
         </activity>
     </application>
