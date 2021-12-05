@@ -6,6 +6,7 @@
         <item name="strokeColor">@color/black</item>
         <item name="backgroundColor">@color/chip_background_color</item>
         <item name="cornerRadius">0dp</item>
+        <item name="backgroundTint">@color/white</item>
     </style>
 
     <style name="CandyStyleButton">

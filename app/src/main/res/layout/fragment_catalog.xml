@@ -33,7 +33,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="12dp"
                 android:background="@android:color/transparent"
-                android:hint="@string/search_in_the_basket"/>
+                android:hint="@string/search_in_the_basket" />
 
         </LinearLayout>
 
@@ -50,46 +50,59 @@
         <com.google.android.material.chip.ChipGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:checkedChip="@id/allChip"
             android:layout_marginStart="@dimen/layout_margin_dimen"
             android:paddingEnd="@dimen/padding_end_chips_dimen"
+            app:checkedChip="@id/allChip"
             app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/allChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Все" />
+                android:text="Все"
+                app:chipCornerRadius="0dp"
+                app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
                 style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Конфеты" />
+                android:text="Конфеты"
+                app:chipCornerRadius="0dp"
+                app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
                 style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Печеньи" />
+                android:text="Печеньи"
+                app:chipCornerRadius="0dp"
+                app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
                 style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Пироги" />
+                android:text="Пироги"
+                app:chipCornerRadius="0dp"
+                app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
                 style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Пироженные" />
+                android:text="Пироженные"
+                app:chipCornerRadius="0dp"
+                app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
                 style="@style/CandyChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Торты" />
+                app:checkedIconTint="@color/design_default_color_primary_dark"
+                android:text="Торты"
+                app:chipCornerRadius="0dp"
+                app:chipStrokeWidth="2.3dp" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
