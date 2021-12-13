@@ -33,7 +33,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="12dp"
                 android:background="@android:color/transparent"
-                android:hint="@string/search_in_the_basket" />
+                android:hint="@string/search_in_the_catalog" />
 
         </LinearLayout>
 
