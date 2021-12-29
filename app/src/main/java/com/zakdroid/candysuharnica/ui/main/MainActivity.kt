@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val database = Firebase.database
         val myRef = database.getReference("candysuharnica-default-rtdb")
 
+        //launch {} - чтобы запустилось
         val catalog = myRef.get().await().children.map { snapShot ->
             snapShot.getValue(CatalogRepository::class.java)!!
         }
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 val value = snapshot.value
-                Log.d(TAG, "Value is: " + value)
+                Log.d(TAG, "Value is: $value")
             }
 
             override fun onCancelled(error: DatabaseError) {
