@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:layout_margin="@dimen/layout_margin_dimen"
+    app:strokeColor="@color/black"
+    app:strokeWidth="@dimen/stroke_width_dimen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            tools:src="@tools:sample/avatars" />
+
+        <View
+            android:id="@id/view"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/price"
+            android:text="5.5 BYN"
+            android:layout_marginStart="@dimen/layout_margin_dimen"
+            android:layout_marginBottom="@dimen/layout_margin_dimen"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/name"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/name"
+            android:text="Шокомафин"
+            android:layout_marginStart="@dimen/layout_margin_dimen"
+            android:layout_marginBottom="@dimen/layout_margin_dimen"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/weight"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/weight"
+            android:text="135 г"
+            android:layout_marginStart="@dimen/layout_margin_dimen"
+            android:layout_marginBottom="@dimen/layout_margin_dimen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/basket_icon"
+            android:background="@color/white"
+            android:layout_margin="@dimen/layout_margin_dimen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

@@ -10,11 +10,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/layout_margin_dimen"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/stroke_width_dimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/black"
-        app:strokeWidth="@dimen/stroke_width_dimen">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
