@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/layout_margin_dimen"
-        android:text="Личный кабинет"
+        android:fontFamily="@font/golos_text_demibold"
+        android:text="@string/profile_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/layout_margin_dimen"
-                android:text="Фамилия Имя"
+                android:fontFamily="@font/golos_text_demibold"
+                android:text="@string/full_name_profile_example"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@id/iv_avatar"
@@ -66,18 +68,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="+375(XX)-XXX-XX-XX"
+                android:fontFamily="@font/golos_text_regular"
+                android:text="@string/phone_number_profile_example"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/view2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_full_name_profile" />
 
             <TextView
-                android:id="@+id/tv_adress_profile"
+                android:id="@+id/tv_address_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="ул. Example, д xx"
+                android:fontFamily="@font/golos_text_regular"
+                android:text="@string/address_profile_example"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/view2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_phone_number_profile" />
@@ -88,7 +93,7 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/black"
-                app:layout_constraintTop_toBottomOf="@+id/tv_adress_profile" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_address_profile" />
 
             <View
                 android:id="@+id/view2"
@@ -101,11 +106,14 @@
 
 
             <TextView
+                android:id="@+id/bank_card_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/layout_margin_dimen"
-                android:text="Действующая \nкарта"
+                android:fontFamily="@font/golos_text_regular"
+                android:text="@string/bank_card_number_profile"
                 android:textColor="@color/black"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/view1" />
@@ -118,10 +126,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="#FFFFFF"
+                android:contentDescription="@string/speakable_text_edit"
                 android:scaleType="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/edit_icon" />
+                app:srcCompat="@drawable/edit_icon"
+                tools:ignore="TouchTargetSizeCheck" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

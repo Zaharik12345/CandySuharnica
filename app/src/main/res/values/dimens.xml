@@ -2,6 +2,7 @@
 <resources>
     <dimen name="stroke_width_dimen">2.3dp</dimen>
     <dimen name="layout_margin_dimen">8dp</dimen>
+    <dimen name="layout_special_margin_dimen">12dp</dimen>
     <dimen name="padding_dimen">8dp</dimen>
     <dimen name="padding_end_chips_dimen">16dp</dimen>
 </resources>

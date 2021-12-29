@@ -8,4 +8,10 @@
     <string name="make_an_order">Оформить заказ</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_title">Личный кабинет</string>
+    <string name="full_name_profile_example">Фамилия Имя</string>
+    <string name="phone_number_profile_example">+375(XX)-XXX-XX-XX</string>
+    <string name="address_profile_example">ул. Example, д xx</string>
+    <string name="bank_card_number_profile">Действующая \nкарта</string>
+    <string name="speakable_text_edit">Edit</string>
 </resources>
