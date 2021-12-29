@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zakdroid.candysuharnica.R
+import com.zakdroid.candysuharnica.ui.main.viewModels.CatalogViewModel
 
 
 class CatalogFragment : Fragment() {
 
+    private lateinit var viewModel: CatalogViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

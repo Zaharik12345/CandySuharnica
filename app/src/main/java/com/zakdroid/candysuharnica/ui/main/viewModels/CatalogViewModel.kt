@@ -2,7 +2,10 @@ package com.zakdroid.candysuharnica.ui.main.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.zakdroid.candysuharnica.data.CatalogRepository
+import androidx.lifecycle.liveData
+import com.zakdroid.candysuharnica.data.FirebaseCallback
+import com.zakdroid.candysuharnica.data.model.CatalogResponse
+import com.zakdroid.candysuharnica.data.repository.CatalogRepository
 import kotlinx.coroutines.Dispatchers
 
 class CatalogViewModel (
