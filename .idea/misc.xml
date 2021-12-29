@@ -12,15 +12,15 @@
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/search_icon.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/shape_button_chip.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/activity_main.xml" value="0.72" />
-        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_basket.xml" value="0.25416666666666665" />
-        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_catalog.xml" value="0.5060773480662983" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/catalog_item.xml" value="0.6" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_basket.xml" value="0.8800000000000001" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_catalog.xml" value="0.4" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_profile.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/drawable/chip.xml" value="0.35185185185185186" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/drawable/main_catalog_icon.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/activity_main.xml" value="0.23388116308470291" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/basket_fragment.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/catalog_fragment.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/catalog_item.xml" value="0.16894630192502533" />
-        <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/fragment_catalog.xml" value="0.16894630192502533" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/profile_fragment.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/menu/bottom_menu.xml" value="0.17552083333333332" />
       </map>
