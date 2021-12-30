@@ -6,7 +6,6 @@
     <string name="basket">корзина</string>
     <string name="profile">профиль</string>
     <string name="make_an_order">Оформить заказ</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_title">Личный кабинет</string>
     <string name="full_name_profile_example">Фамилия Имя</string>

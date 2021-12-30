@@ -8,7 +8,7 @@ import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.data.model.CatalogResponse
 import kotlinx.coroutines.tasks.await
 
-class CatalogRepository (
+class CatalogRepository constructor(
     private val rootRef: DatabaseReference = FirebaseDatabase.getInstance().reference,
     private val productRef: DatabaseReference = rootRef.child("catalog")
 ) {
