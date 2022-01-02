@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mcv_root"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
+    android:layout_width="match_parent"
     android:layout_height="300dp"
-    android:layout_margin="@dimen/layout_margin_dimen"
+    android:backgroundTint="@color/white"
+    android:layout_marginTop="@dimen/layout_margin_dimen"
+    android:layout_marginStart="@dimen/layout_margin_dimen"
     app:strokeColor="@color/black"
     app:strokeWidth="@dimen/stroke_width_dimen">
 
@@ -14,10 +17,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/iv_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
-
+            android:scaleType="centerCrop"
+            android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -29,56 +33,92 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="@color/black"
-            app:layout_constraintBottom_toTopOf="@id/price"
+            app:layout_constraintBottom_toTopOf="@id/tv_price"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_margin_dimen"
-            android:layout_marginBottom="@dimen/layout_margin_dimen"
             android:fontFamily="@font/golos_text_demibold"
-            android:text="5.5 BYN"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/name"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/scrollView"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="5.5 BYN" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/tv_priceSale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_dimen"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/scrollView"
+            app:layout_constraintStart_toEndOf="@id/tv_price"
+            tools:text="5.5 BYN"
+            tools:visibility="visible"/>
+
+        <View
+            android:id="@+id/v_cross"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:alpha="50"
+            android:layout_marginTop="4dp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="@id/tv_priceSale"
+            app:layout_constraintEnd_toEndOf="@id/tv_priceSale"
+            app:layout_constraintStart_toStartOf="@id/tv_priceSale"
+            app:layout_constraintBottom_toBottomOf="@id/tv_priceSale"
+            tools:visibility="visible"/>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin_dimen"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/tv_weight"
+            app:layout_constraintEnd_toStartOf="@+id/b_basket"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/golos_text_regular"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingTop="@dimen/padding_dimen"
+                android:paddingBottom="@dimen/padding_dimen"
+                tools:text="Шокомафин" />
+
+        </HorizontalScrollView>
+
+
+        <TextView
+            android:id="@+id/tv_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_margin_dimen"
             android:layout_marginBottom="@dimen/layout_margin_dimen"
             android:fontFamily="@font/golos_text_regular"
-            android:text="Шокомафин"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@id/weight"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/layout_margin_dimen"
-            android:layout_marginBottom="@dimen/layout_margin_dimen"
-            android:fontFamily="@font/golos_text_regular"
-            android:text="135 г"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="135 г" />
 
         <ImageButton
+            android:id="@+id/b_basket"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/basket_icon"
             android:background="@color/white"
-            android:layout_margin="@dimen/layout_margin_dimen"
+            android:src="@drawable/basket_icon"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

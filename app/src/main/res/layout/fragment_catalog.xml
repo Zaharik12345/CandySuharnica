@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Все"
-                app:chipCornerRadius="0dp"
+                app:chipCornerRadius="@dimen/stroke_width_dimen"
                 app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Конфеты"
-                app:chipCornerRadius="0dp"
+                app:chipCornerRadius="@dimen/stroke_width_dimen"
                 app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
@@ -78,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Печеньи"
-                app:chipCornerRadius="0dp"
+                app:chipCornerRadius="@dimen/stroke_width_dimen"
                 app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Пироги"
-                app:chipCornerRadius="0dp"
+                app:chipCornerRadius="@dimen/stroke_width_dimen"
                 app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Пироженные"
-                app:chipCornerRadius="0dp"
+                app:chipCornerRadius="@dimen/stroke_width_dimen"
                 app:chipStrokeWidth="2.3dp" />
 
             <com.google.android.material.chip.Chip
@@ -103,13 +103,14 @@
                 android:layout_height="wrap_content"
                 app:checkedIconTint="@color/design_default_color_primary_dark"
                 android:text="Торты"
-                app:chipCornerRadius="0dp"
+                app:chipCornerRadius="@dimen/stroke_width_dimen"
                 app:chipStrokeWidth="2.3dp" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 
     <View
+        android:id="@+id/lineView"
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:background="@color/black"
@@ -118,12 +119,13 @@
         app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewCatalog"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/layout_margin_dimen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/lineView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.data.model.CatalogResponse
@@ -38,9 +39,9 @@ class CatalogFragment : Fragment() {
         })
         binding = FragmentCatalogBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        val layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = adapter
+        val layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerViewCatalog.layoutManager = layoutManager
+        binding.recyclerViewCatalog.adapter = adapter
 
         return binding.root
     }
