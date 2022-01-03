@@ -9,15 +9,17 @@
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/loading_screen_logo.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/main_catalog_icon.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/plus_list_icon.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/profile_of_user_icon.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/search_icon.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/shape_button_chip.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/small_basket_icon.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/activity_main.xml" value="0.3824451410658307" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/activity_splash_screen.xml" value="0.182518115942029" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/catalog_item.xml" value="0.6" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_basket.xml" value="0.2" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_catalog.xml" value="0.4" />
-        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_profile.xml" value="0.72" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_profile.xml" value="0.6" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/recycler_fragment_catalog.xml" value="0.264" />
         <entry key="..\:/CandySuharnica/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/drawable/chip.xml" value="0.35185185185185186" />

@@ -32,11 +32,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/layout_margin_dimen"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLine"
         app:strokeColor="@color/black"
-        app:strokeWidth="@dimen/stroke_width_dimen"
-        tools:layout_editor_absoluteY="57dp">
+        app:strokeWidth="@dimen/stroke_width_dimen">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -111,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/layout_margin_dimen"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/golos_text_regular"
                 android:text="@string/bank_card_number_profile"
                 android:textColor="@color/black"
@@ -138,9 +140,13 @@
                 android:id="@+id/ib_edit_credit_card_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/edit_icon"
-                tools:layout_editor_absoluteX="357dp"
-                tools:layout_editor_absoluteY="106dp" />
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                app:srcCompat="@drawable/edit_icon" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -164,30 +170,44 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tv_my_orders_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/golos_text_demibold"
-                android:text="Мои заказы"
+                android:text="@string/my_orders_profile"
                 android:textColor="#000000"
-                tools:layout_editor_absoluteX="36dp"
-                tools:layout_editor_absoluteY="13dp" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="156dp" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="18dp"
-                android:layout_height="17dp"
-                app:srcCompat="@drawable/basket_icon"
-                tools:layout_editor_absoluteX="7dp"
-                tools:layout_editor_absoluteY="13dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/small_basket_icon" />
 
-            <View
-                android:id="@+id/view3"
-                android:layout_marginTop="@dimen/layout_margin_dimen"
-                android:layout_width="395dp"
-                android:layout_height="2dp"
-                android:background="@color/black"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/plus_list_icon"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_my_orders_profile" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

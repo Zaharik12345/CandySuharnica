@@ -13,4 +13,5 @@
     <string name="address_profile_example">ул. Example, д xx</string>
     <string name="bank_card_number_profile">Действующая \nкарта</string>
     <string name="speakable_text_edit">Edit</string>
+    <string name="my_orders_profile">Мои заказы</string>
 </resources>
