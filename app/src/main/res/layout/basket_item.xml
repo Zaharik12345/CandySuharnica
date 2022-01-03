@@ -36,6 +36,7 @@
             android:layout_height="2dp"
             android:layout_marginTop="8dp"
             android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_product_icon_basket" />
 
         <TextView
@@ -46,20 +47,63 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/golos_text_demibold"
             android:text="@string/app_name"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/iv_product_icon_basket"
             app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/tv_price_basket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="XX.XX BYN"
             app:layout_constraintStart_toEndOf="@+id/iv_product_icon_basket"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_title_basket" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            style="@android:style/Widget.Holo.Light.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:srcCompat="@drawable/big_minus_icon"
+            tools:layout_editor_absoluteY="45dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            style="@android:style/Widget.Holo.Light.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:srcCompat="@drawable/big_plus_icon"
+            tools:layout_editor_absoluteY="45dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/golos_text_demibold"
+            android:text="XX"
+            android:textColor="@color/black"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_price_basket"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton2" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            style="@android:style/Widget.Holo.Light.ImageButton"
+            android:layout_width="18dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="12dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/view1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButton2"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/recycle_bin_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
