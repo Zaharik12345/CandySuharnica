@@ -43,7 +43,8 @@ class AdapterRecyclerViewCatalog: RecyclerView.Adapter<CatalogViewHolder>() {
             //if catalogItem has sale
             if (catalogListItem.price != catalogListItem.priceSale){
                 tvPriceSale.visibility = View.VISIBLE
-                tvPriceSale.text = catalogListItem.priceSale.plus(" BYN")
+                tvPriceSale.text = catalogListItem.price
+                tvPrice.text = catalogListItem.priceSale.plus(" BYN")
                 vCross.visibility = View.VISIBLE
                 mcvRoot.setBackgroundColor(ContextCompat.getColor(context, R.color.lime)) //doesn't work? i don't know
                 bBasket.setBackgroundColor(ContextCompat.getColor(context, R.color.lime))
