@@ -32,7 +32,7 @@ class CatalogFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         adapter = AdapterRecyclerViewCatalog()
         viewModel.responseLiveData.observe(this, {
             adapter.catalogItems = it.catalogItems
@@ -46,10 +46,6 @@ class CatalogFragment : Fragment() {
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
-
-    }
 
     private fun getResponseUsingCoroutines() {
         viewModel.responseLiveData.observe(this, {

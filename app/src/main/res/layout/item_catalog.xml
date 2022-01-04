@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="300dp"
-    android:backgroundTint="@color/white"
     android:layout_marginTop="@dimen/layout_margin_dimen"
     android:layout_marginStart="@dimen/layout_margin_dimen"
     app:strokeColor="@color/black"
@@ -27,6 +26,31 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/view"
             tools:src="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:id="@+id/ll_smile_and_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_margin_dimen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_smile_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_tag_faces_24"/>
+
+            <TextView
+                android:id="@+id/tv_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:paddingLeft="4dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/golos_text_demibold"
+                tools:text="100"/>
+        </LinearLayout>
 
         <View
             android:id="@id/view"
@@ -67,7 +91,7 @@
             android:layout_height="1dp"
             android:background="@color/black"
             android:alpha="50"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="5dp"
             android:visibility="invisible"
             app:layout_constraintTop_toTopOf="@id/tv_priceSale"
             app:layout_constraintEnd_toEndOf="@id/tv_priceSale"
@@ -82,7 +106,7 @@
             android:layout_marginStart="@dimen/layout_margin_dimen"
             android:scrollbars="none"
             app:layout_constraintBottom_toTopOf="@id/tv_weight"
-            app:layout_constraintEnd_toStartOf="@+id/b_basket"
+            app:layout_constraintEnd_toStartOf="@+id/ib_basket"
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
@@ -112,7 +136,7 @@
             tools:text="135 г" />
 
         <ImageButton
-            android:id="@+id/b_basket"
+            android:id="@+id/ib_basket"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@color/white"

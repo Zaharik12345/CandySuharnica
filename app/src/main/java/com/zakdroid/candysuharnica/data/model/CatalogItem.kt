@@ -8,5 +8,6 @@ data class CatalogItem(
     val imgUrl: String? = "",
     val price: String? = "",
     val priceSale: String? = "",
-    val likes: String? = "",
+    var likes: String? = "",
+    var isLiked: Boolean = false
 )
