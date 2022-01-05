@@ -2,10 +2,11 @@ package com.zakdroid.candysuharnica.ui.main.adapters
 
 import android.content.Context
 import android.graphics.Color
+import android.location.GnssAntennaInfo
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -28,7 +29,8 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
         val binding = ItemCatalogBinding.inflate(inflater, parent, false)
 
         context = parent.context
-
+        //scaleType for loading animation
+        binding.ivIcon.scaleType = ImageView.ScaleType.CENTER_CROP
         return CatalogViewHolder(binding)
     }
 
@@ -41,8 +43,8 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
         with(holder.binding) {
 
             llSmileAndLikes.tag = catalogListItem
-
             ivIcon.load(catalogListItem.imgUrl){
+                crossfade(true)
                 placeholder(R.drawable.animate_rotate)
             }
             tvWeight.text = catalogListItem.weight.plus(" г")
