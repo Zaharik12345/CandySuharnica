@@ -11,6 +11,8 @@
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/ic_baseline_tag_faces_24.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/ic_baseline_tag_faces_black.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/loading_animation_icon_one.xml" value="0.2703125" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/drawable/loading_animation_icon_two.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/loading_screen_logo.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/main_catalog_icon.xml" value="0.2703125" />
         <entry key="..\:/CandySuharnica/app/src/main/res/drawable/plus_list_icon.xml" value="0.2703125" />
@@ -31,6 +33,7 @@
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/item_basket.xml" value="0.4" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/item_catalog.xml" value="0.4" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/recycler_fragment_catalog.xml" value="0.264" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/shimmer_placeholder_catalog.xml" value="0.2504528985507246" />
         <entry key="..\:/CandySuharnica/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/drawable/chip.xml" value="0.35185185185185186" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/drawable/main_catalog_icon.xml" value="0.19166666666666668" />
