@@ -54,7 +54,7 @@
         android:id="@+id/fragment1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/viewLine2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -113,7 +113,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <View
-        android:id="@+id/view1"
+        android:id="@+id/viewLine2"
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:layout_marginBottom="@dimen/layout_margin_dimen"

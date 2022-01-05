@@ -47,7 +47,7 @@
                 android:id="@+id/iv_avatar"
                 android:layout_width="100dp"
                 android:layout_height="90dp"
-                app:layout_constraintBottom_toBottomOf="@+id/view2"
+                app:layout_constraintBottom_toBottomOf="@+id/viewLine3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@tools:sample/avatars" />
@@ -74,7 +74,7 @@
                 android:text="@string/phone_number_profile_example"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintStart_toStartOf="@+id/viewLine3"
                 app:layout_constraintTop_toBottomOf="@+id/tv_full_name_profile" />
 
             <TextView
@@ -86,23 +86,24 @@
                 android:fontFamily="@font/golos_text_regular"
                 android:text="@string/address_profile_example"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintStart_toStartOf="@+id/viewLine3"
                 app:layout_constraintTop_toBottomOf="@+id/tv_phone_number_profile" />
 
             <View
-                android:id="@+id/view1"
+                android:id="@+id/viewLine2"
                 android:layout_width="395dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_address_profile" />
 
             <View
-                android:id="@+id/view2"
+                android:id="@+id/viewLine3"
                 android:layout_width="2dp"
                 android:layout_height="0dp"
                 android:background="@color/black"
-                app:layout_constraintBottom_toTopOf="@id/view1"
+                app:layout_constraintBottom_toTopOf="@id/viewLine2"
                 app:layout_constraintStart_toEndOf="@id/iv_avatar"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,7 +120,7 @@
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view1" />
+                app:layout_constraintTop_toBottomOf="@id/viewLine2" />
 
             <ImageButton
                 android:id="@+id/ib_edit_profile_info"
@@ -145,7 +146,7 @@
                 android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view1"
+                app:layout_constraintTop_toBottomOf="@+id/viewLine2"
                 app:srcCompat="@drawable/edit_icon" />
 
 
@@ -180,11 +181,11 @@
                 android:text="@string/my_orders_profile"
                 android:textColor="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/iv_small_basket_icon_profile"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/iv_small_basket_icon_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -193,15 +194,74 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/small_basket_icon" />
 
-            <ImageView
-                android:id="@+id/imageView5"
+            <ImageButton
+                android:id="@+id/ib_small_plus_orders_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:background="@color/white"
+                android:contentDescription="@string/amount_example_xx"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/plus_list_icon" />
+                app:srcCompat="@drawable/plus_list_icon"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mc_favourites"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin_dimen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/stroke_width_dimen"
+        tools:layout_editor_absoluteY="214dp"
+        app:layout_constraintTop_toBottomOf="@id/mc_orders">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_favorites_smile_profile"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_baseline_tag_faces_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_favorites_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/golos_text_demibold"
+                android:text="Мои любимые десерты"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_favorites_smile_profile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_amount_of_favorites_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/golos_text_regular"
+                android:text="@string/amount_example_xx"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
