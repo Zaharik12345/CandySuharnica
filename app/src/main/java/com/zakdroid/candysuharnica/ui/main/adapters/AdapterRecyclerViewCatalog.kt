@@ -1,6 +1,7 @@
 package com.zakdroid.candysuharnica.ui.main.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +28,6 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
         val binding = ItemCatalogBinding.inflate(inflater, parent, false)
 
         context = parent.context
-        //binding.moreImageViewButton.setOnClickListener(this)
 
         return CatalogViewHolder(binding)
     }
@@ -35,23 +35,21 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
     override fun onBindViewHolder(holder: CatalogViewHolder, position: Int) {
 
 
-        var catalogListItem = catalogItems!![position]
-        //holder.itemView.tag = catalogListItem
+        val catalogListItem = catalogItems!![position]
 
 
         with(holder.binding) {
 
             llSmileAndLikes.tag = catalogListItem
 
-
-            ivIcon.load(catalogListItem!!.imgUrl)
+            ivIcon.load(catalogListItem.imgUrl)
             tvWeight.text = catalogListItem.weight.plus(" г")
             tvName.text = catalogListItem.name
-            val likes = catalogListItem.likes!!.toDouble()
+            val likes = catalogListItem.likes?.toDouble() ?: 0.0
 
             llSmileAndLikes.setOnClickListener(this@AdapterRecyclerViewCatalog)
-            ibBasket.setOnClickListener(this@AdapterRecyclerViewCatalog)
-            root.setOnClickListener(this@AdapterRecyclerViewCatalog)
+            //ibBasket.setOnClickListener(this@AdapterRecyclerViewCatalog)
+            //root.setOnClickListener(this@AdapterRecyclerViewCatalog)
 
             //if catalogItem has sale
             if (catalogListItem.price != catalogListItem.priceSale) {
@@ -68,6 +66,12 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
 
             } else {
                 tvPrice.text = catalogListItem.price.plus(" BYN")
+
+                tvPriceSale.visibility = View.INVISIBLE
+                vCross.visibility = View.INVISIBLE
+
+                mcvRoot.setBackgroundColor(Color.WHITE)
+                ibBasket.setBackgroundColor(Color.WHITE)
             }
 
             //set likes, if count > 999 then show 1.2 k for example
@@ -76,10 +80,15 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
                 else -> String.format("%.0f", likes)
             }
 
+
             if (catalogListItem.isLiked) {
                 val colorDarkLime = ContextCompat.getColor(context, R.color.darkLime)
                 ivSmileLikes.setColorFilter(colorDarkLime)
                 tvLikes.setTextColor(colorDarkLime)
+            } else{
+                val colorGrey = ContextCompat.getColor(context, R.color.grey)
+                ivSmileLikes.setColorFilter(colorGrey)
+                tvLikes.setTextColor(colorGrey)
             }
         }
 
@@ -90,23 +99,23 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
 
     override fun onClick(v: View) {
 
-        try {
             val catalogItem = v.tag as CatalogItem
 
             when (v.id) {
                 R.id.ll_smile_and_likes -> {
 
-                    catalogItems?.firstOrNull { it.id == catalogItem.id }?.isLiked = true
+                    with(catalogItems?.firstOrNull { it.id == catalogItem.id }){
+                        if (this != null)
+                            isLiked = !isLiked
+                    }
                     notifyItemChanged(catalogItem.id!!.toInt())
 
                 }
                 else -> {
-                    //actionListener.onUserDetails(user)
+
                 }
             }
-        } catch (e: Exception) {
-            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
-        }
+
     }
 
 }
