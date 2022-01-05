@@ -42,7 +42,9 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
 
             llSmileAndLikes.tag = catalogListItem
 
-            ivIcon.load(catalogListItem.imgUrl)
+            ivIcon.load(catalogListItem.imgUrl){
+                placeholder(R.drawable.animate_rotate)
+            }
             tvWeight.text = catalogListItem.weight.plus(" г")
             tvName.text = catalogListItem.name
             val likes = catalogListItem.likes?.toDouble() ?: 0.0
