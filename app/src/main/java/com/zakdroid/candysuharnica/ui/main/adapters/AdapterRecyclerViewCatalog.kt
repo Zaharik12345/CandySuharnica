@@ -45,7 +45,12 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
             llSmileAndLikes.tag = catalogListItem
             ivIcon.load(catalogListItem.imgUrl){
                 crossfade(true)
+                crossfade(2000)
                 placeholder(R.drawable.animate_rotate)
+                target(onStart = {placeholder -> ivIcon.scaleType = ImageView.ScaleType.CENTER_INSIDE
+                                 ivIcon.setImageDrawable(placeholder)},
+                onSuccess = {result ->  ivIcon.scaleType = ImageView.ScaleType.CENTER_CROP
+                ivIcon.setImageDrawable(result)})
             }
             tvWeight.text = catalogListItem.weight.plus(" г")
             tvName.text = catalogListItem.name
