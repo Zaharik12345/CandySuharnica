@@ -10,6 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/layout_margin_dimen"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,7 +29,7 @@
                 android:src="@drawable/search_icon" />
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="12dp"
@@ -43,12 +44,12 @@
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="@dimen/layout_margin_dimen"
+        android:layout_height="2.3dp"
+        android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/materialCardViewSearch" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment1"

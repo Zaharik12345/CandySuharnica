@@ -53,15 +53,14 @@
             app:layout_constraintStart_toEndOf="@+id/iv_product_icon_basket_item"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_title_basket_item" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ll_item_basket_buttons_and_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/shape_text"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/ib_recycle_bin_basket_item">
+            app:layout_constraintEnd_toEndOf="parent">
 
 
             <ImageButton
@@ -71,13 +70,20 @@
                 android:layout_height="wrap_content"
                 android:scaleType="center"
                 app:srcCompat="@drawable/big_minus_icon"
-                android:background="@color/black"/>
+                android:background="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
             <View
                 android:id="@+id/viewLine2"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
                 android:background="@color/black"
-                />
+                app:layout_constraintStart_toEndOf="@id/ib_minus_basket_item"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ib_plus_basket_item"/>
+
             <TextView
                 android:id="@+id/tv_amount_of_product_basket_item"
                 android:layout_width="wrap_content"
@@ -87,13 +93,19 @@
                 android:text="@string/amount_example_xx"
                 android:paddingLeft="1.5dp"
                 android:paddingRight="1.5dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/ib_minus_basket_item"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
             <View
                 android:id="@+id/viewLine1"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
                 android:background="@color/black"
-                />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ib_minus_basket_item"
+                app:layout_constraintEnd_toStartOf="@id/ib_plus_basket_item" />
 
             <ImageButton
                 android:id="@+id/ib_plus_basket_item"
@@ -102,20 +114,26 @@
                 android:layout_height="wrap_content"
                 android:scaleType="center"
                 app:srcCompat="@drawable/big_plus_icon"
-                android:background="@color/black"/>
-        </LinearLayout>
+                android:background="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_amount_of_product_basket_item"/>
 
-        <ImageButton
-            android:id="@+id/ib_recycle_bin_basket_item"
-            style="@android:style/Widget.Holo.Light.ImageButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="8dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/recycle_bin_icon" />
+            <ImageButton
+                android:id="@+id/ib_recycle_bin_basket_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_baseline_delete_outline_24"
+                android:layout_marginLeft="@dimen/layout_margin_dimen"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ib_plus_basket_item"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

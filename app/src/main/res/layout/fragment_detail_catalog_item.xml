@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/ib_arrow_back"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_in_action_bar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:fontFamily="@font/golos_text_demibold"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintEnd_toStartOf="@+id/ll_smile_and_likes"
+        app:layout_constraintStart_toEndOf="@id/ib_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Макарон с малиной" />
+
+    <LinearLayout
+        android:id="@+id/ll_smile_and_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toStartOf="@+id/ib_share"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_smile_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_tag_faces_24" />
+
+        <TextView
+            android:id="@+id/tv_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alpha="0.7"
+            android:fontFamily="@font/golos_text_demibold"
+            android:paddingLeft="4dp"
+            tools:text="100" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_share"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:src="@drawable/ic_baseline_share_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2.3dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_icons"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="@dimen/layout_margin_dimen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/stroke_width_dimen">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src="@tools:sample/avatars"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin_dimen"
+        app:layout_constraintTop_toBottomOf="@id/mcv_icons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/stroke_width_dimen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_dimen">
+
+            <TextView
+                android:id="@+id/tv_title_in_card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/golos_text_demibold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Макрон с малиной" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_in_card_view"
+                tools:text="75 г"/>
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/layout_margin_dimen"
+                android:fontFamily="@font/golos_text_demibold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="5.5 BYN" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_dimen"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/mcv_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Макарон — французское кондитерское изделие из яичных белков, сахара и молотого миндаля. Между двумя нежными ломтиками не менее нежный крем. Мягкий десерт с гладкой поверхностью тает во рту."/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_add_to_basket"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin_dimen"
+        android:backgroundTint="@color/lime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/stroke_width_dimen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding_dimen">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/golos_text_demibold"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Добавить в корзину" />
+
+            <ImageButton
+                android:id="@+id/ib_plus_basket_item"
+                style="@android:style/Widget.Holo.Light.ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/big_plus_icon" />
+
+            <ImageButton
+                android:id="@+id/ib_minus_basket_item"
+                style="@android:style/Widget.Holo.Light.ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_amount_of_product_basket_item"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/big_minus_icon" />
+
+            <View
+                android:id="@+id/viewLine2_basket_item"
+                android:layout_width="0dp"
+                android:layout_height="2.3dp"
+                android:background="@android:color/black"
+                app:layout_constraintEnd_toStartOf="@+id/ib_plus_basket_item"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ib_minus_basket_item"
+                app:layout_constraintTop_toTopOf="@+id/ib_plus_basket_item" />
+
+            <View
+                android:id="@+id/viewLine3_basket_item"
+                android:layout_width="0dp"
+                android:layout_height="2.3dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/ib_plus_basket_item"
+                app:layout_constraintEnd_toStartOf="@+id/ib_plus_basket_item"
+                app:layout_constraintStart_toEndOf="@+id/ib_minus_basket_item" />
+
+            <TextView
+                android:id="@+id/tv_amount_of_product_basket_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/golos_text_demibold"
+                android:text="@string/amount_example_xx"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ib_plus_basket_item"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

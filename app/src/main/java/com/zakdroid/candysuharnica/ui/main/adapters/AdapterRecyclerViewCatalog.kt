@@ -2,7 +2,6 @@ package com.zakdroid.candysuharnica.ui.main.adapters
 
 import android.content.Context
 import android.graphics.Color
-import android.location.GnssAntennaInfo
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.size.Scale
 import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
@@ -21,6 +21,7 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
             field = newValue
             notifyDataSetChanged()
         }
+
     private lateinit var context: Context
 
 
@@ -43,7 +44,8 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
         with(holder.binding) {
 
             llSmileAndLikes.tag = catalogListItem
-            ivIcon.load(catalogListItem.imgUrl){
+
+            ivIcon.load(catalogListItem.imgUrl) {
                 crossfade(true)
                 crossfade(2000)
                 placeholder(R.drawable.animate_rotate)
@@ -52,6 +54,7 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
                 onSuccess = {result ->  ivIcon.scaleType = ImageView.ScaleType.CENTER_CROP
                 ivIcon.setImageDrawable(result)})
             }
+
             tvWeight.text = catalogListItem.weight.plus(" г")
             tvName.text = catalogListItem.name
             val likes = catalogListItem.likes?.toDouble() ?: 0.0
@@ -94,26 +97,24 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
                 val colorDarkLime = ContextCompat.getColor(context, R.color.darkLime)
                 ivSmileLikes.setColorFilter(colorDarkLime)
                 tvLikes.setTextColor(colorDarkLime)
-            } else{
+            } else {
                 val colorGrey = ContextCompat.getColor(context, R.color.grey)
                 ivSmileLikes.setColorFilter(colorGrey)
                 tvLikes.setTextColor(colorGrey)
             }
-        }
+        }}
 
 
-    }
+        override fun getItemCount(): Int = catalogItems?.size ?: 0
 
-    override fun getItemCount(): Int = catalogItems?.size ?: 0
-
-    override fun onClick(v: View) {
+        override fun onClick(v: View) {
 
             val catalogItem = v.tag as CatalogItem
 
             when (v.id) {
                 R.id.ll_smile_and_likes -> {
 
-                    with(catalogItems?.firstOrNull { it.id == catalogItem.id }){
+                    with(catalogItems?.firstOrNull { it.id == catalogItem.id }) {
                         if (this != null)
                             isLiked = !isLiked
                     }
@@ -124,12 +125,10 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
 
                 }
             }
-
+        }
     }
 
-}
-
-class CatalogViewHolder(
-    val binding: ItemCatalogBinding
-) : RecyclerView.ViewHolder(binding.root)
+    class CatalogViewHolder(
+        val binding: ItemCatalogBinding
+    ) : RecyclerView.ViewHolder(binding.root)
 

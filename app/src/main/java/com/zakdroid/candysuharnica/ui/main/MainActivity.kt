@@ -31,28 +31,5 @@ class MainActivity : AppCompatActivity() {
         navController = binding.fragmentContainerView.getFragment<NavHostFragment>().navController
         binding.bottomNavView.setupWithNavController(navController)
 
-        getResponseUsingCoroutines()
-    }
-
-    private fun getResponseUsingCoroutines() {
-        viewModel.responseLiveData.observe(this, {
-            print(it)
-        })
-    }
-
-    private fun print(response: CatalogResponse) {
-        response.catalogItems?.let { products ->
-            products.forEach{ product ->
-                product.name?.let {
-                    Log.i(TAG, it)
-                }
-            }
-        }
-
-        response.exception?.let { exception ->
-            exception.message?.let {
-                Log.e(TAG, it)
-            }
-        }
     }
 }
