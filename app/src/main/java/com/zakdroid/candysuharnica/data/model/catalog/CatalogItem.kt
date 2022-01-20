@@ -1,9 +1,9 @@
-package com.zakdroid.candysuharnica.data.model
+package com.zakdroid.candysuharnica.data.model.catalog
 
 data class CatalogItem(
     val id: String? = "",
     val name: String? = "",
-    val type: String? = "", //for filter in the groups
+    val type_id: String? = "", //for filter in the groups
     val weight: String? = "",
     val imgUrl: String? = "",
     val price: String? = "",

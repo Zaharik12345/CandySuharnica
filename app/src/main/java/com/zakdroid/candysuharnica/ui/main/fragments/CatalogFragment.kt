@@ -10,9 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.zakdroid.candysuharnica.R
-import com.zakdroid.candysuharnica.data.model.CatalogResponse
+import com.zakdroid.candysuharnica.data.model.catalog.CatalogResponse
 import com.zakdroid.candysuharnica.databinding.FragmentCatalogBinding
 import com.zakdroid.candysuharnica.ui.main.adapters.AdapterRecyclerViewCatalog
 import com.zakdroid.candysuharnica.ui.main.viewModels.CatalogViewModel
