@@ -8,7 +8,7 @@ import com.zakdroid.candysuharnica.data.model.CatalogItem
 @Entity(tableName = "catalog")
 
 data class CatalogItemDbEntity(
-    @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: String,
+    @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "imgUrl") val imgUrl: String,
     @ColumnInfo(name = "likes") val likes: String,
     @ColumnInfo(name = "name") val name: String,
@@ -22,7 +22,7 @@ data class CatalogItemDbEntity(
 ) {
 
     fun toCatalogItem(): CatalogItem = CatalogItem(
-        id = id,
+        id = id.toString(),
         name = name,
         type = type,
         weight = weight,

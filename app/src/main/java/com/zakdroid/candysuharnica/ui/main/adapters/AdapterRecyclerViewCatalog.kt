@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.zakdroid.candysuharnica.R
-import com.zakdroid.candysuharnica.data.model.catalog.CatalogItem
+import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
 
 class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
