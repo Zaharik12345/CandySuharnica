@@ -7,7 +7,7 @@ import com.zakdroid.candysuharnica.data.model.catalog.CatalogItem
 
 @Entity(tableName = "catalog")
 
-data class catalogItemDbEntity(
+data class CatalogItemDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: String,
     @ColumnInfo(name = "imgUrl") val imgUrl: String,
     @ColumnInfo(name = "likes") val likes: String,
