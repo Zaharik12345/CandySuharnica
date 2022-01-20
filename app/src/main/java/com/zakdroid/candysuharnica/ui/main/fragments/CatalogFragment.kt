@@ -45,27 +45,4 @@ class CatalogFragment : Fragment() {
     }
 
 
-    private fun getResponseUsingCoroutines() {
-        viewModel.responseLiveData.observe(this, {
-            adapter.catalogItems = it.catalogItems
-        })
-    }
-
-    private fun print(response: CatalogResponse) {
-        response.catalogItems?.let { products ->
-            products.forEach{ product ->
-                product.name?.let {
-                    Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-
-        response.exception?.let { exception ->
-            exception.message?.let {
-                Log.e(ContentValues.TAG, it)
-            }
-        }
-    }
-
-
 }
