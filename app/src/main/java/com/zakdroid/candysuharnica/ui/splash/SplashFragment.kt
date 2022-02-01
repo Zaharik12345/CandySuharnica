@@ -5,63 +5,54 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.zakdroid.candysuharnica.data.model.CatalogItem
+import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.databinding.FragmentSplashBinding
+import com.zakdroid.candysuharnica.ui.main.MainActivity
 import com.zakdroid.candysuharnica.ui.main.viewModels.CatalogViewModel
-import com.zakdroid.candysuharnica.utils.viewModelCreator
 
-class SplashFragment : Fragment() {
+class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     private lateinit var binding: FragmentSplashBinding
 
     private lateinit var viewModel: CatalogViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CatalogViewModel::class.java)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSplashBinding.bind(view)
-
+        viewModel = ViewModelProvider(this).get(CatalogViewModel::class.java)
         // just some animations example
-        //renderAnimations()
+        renderAnimations()
         viewModel.responseLiveData.observe(this, {
-            fillDB(it.catalogItems!!)
+            launchMainScreen()
         })
 
        // viewModel.launchMainScreenEvent.observeEvent(viewLifecycleOwner) { launchMainScreen(it) }
 
     }
 
-    private fun fillDB(catalogItems: List<CatalogItem>){
-
+    /*override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentSplashBinding.inflate(inflater, container, false)
+        //viewModel.responseLiveData.observe(this, { })
+        return binding.root
     }
+*/
 
-    /*private fun launchMainScreen(isSignedIn: Boolean) {
+    private fun launchMainScreen() {
         val intent = Intent(requireContext(), MainActivity::class.java)
-
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-
-        val args = MainActivityArgs(isSignedIn)
-        intent.putExtras(args.toBundle())
         startActivity(intent)
     }
 
     private fun renderAnimations() {
-        binding.loadingIndicator.alpha = 0f
-        binding.loadingIndicator.animate()
+        binding.imgViewLogo.alpha = 0f
+        binding.imgViewLogo.animate()
             .alpha(0.7f)
             .setDuration(1000)
             .start()
 
-        binding.pleaseWaitTextView.alpha = 0f
-        binding.pleaseWaitTextView.animate()
-            .alpha(1f)
-            .setStartDelay(500)
-            .setDuration(1000)
-            .start()
-
-    }*/
+    }
 }

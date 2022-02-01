@@ -56,8 +56,10 @@
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/profile_fragment.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/menu/bottom_menu.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/iliar/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/btn_default_holo_light.xml" value="0.36354166666666665" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15447154471544716" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.10377358490566038" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16261398176291794" />
-        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.16261398176291794" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.1" />
       </map>
     </option>
   </component>

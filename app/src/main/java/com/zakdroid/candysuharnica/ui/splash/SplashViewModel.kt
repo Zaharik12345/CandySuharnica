@@ -11,8 +11,6 @@ class SplashViewModel(
     private val repository: CatalogRepository = CatalogRepository()
 ) : ViewModel() {
 
-    catalogItems: List<CatalogItem>
-
     init {
         val responseLiveData = liveData(Dispatchers.IO) {
             emit(repository.getResponseFromRealtimeDatabaseUsingCoroutines())

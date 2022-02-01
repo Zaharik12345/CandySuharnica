@@ -6,10 +6,10 @@
     tools:context=".ui.splash.SplashActivity">
 
     <ImageView
+        android:id="@+id/imgViewLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/loading_screen_logo"
         android:layout_centerInParent="true"
-        android:id="@+id/imgViewLogo"/>
+        android:src="@drawable/loading_screen_logo" />
 
 </RelativeLayout>
