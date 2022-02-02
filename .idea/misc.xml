@@ -30,7 +30,9 @@
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/catalog_item.xml" value="0.4" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_basket.xml" value="0.2" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_catalog.xml" value="0.4" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_detail_catalog_item.xml" value="0.264" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_splash.xml" value="0.1793478260869565" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/item_basket.xml" value="0.4" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/item_catalog.xml" value="0.4" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/recycler_fragment_catalog.xml" value="0.264" />
@@ -56,10 +58,8 @@
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/layout/profile_fragment.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/menu/bottom_menu.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/iliar/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/btn_default_holo_light.xml" value="0.36354166666666665" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15447154471544716" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.10377358490566038" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16261398176291794" />
-        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.16261398176291794" />
       </map>
     </option>
   </component>
