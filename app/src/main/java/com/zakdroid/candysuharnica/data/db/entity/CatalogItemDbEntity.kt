@@ -26,12 +26,12 @@ data class CatalogItemDbEntity(
         name = name,
         type = type,
         weight = weight,
-        imgUrl = imgUrl,
+        //imgUrl = imgUrl,
         price = price,
         priceSale = priceSale,
         likes = likes,
         about = about,
-        product_composition = product_composition,
-        nutritional_value = nutritional_value
+        //product_composition = product_composition,
+        //nutritional_value = nutritional_value
     )
 }

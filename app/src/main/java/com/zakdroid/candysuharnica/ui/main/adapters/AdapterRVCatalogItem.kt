@@ -7,11 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
+import com.zakdroid.candysuharnica.ui.main.fragments.CatalogFragmentDirections
 
 class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
 
@@ -21,6 +25,8 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
             notifyDataSetChanged()
         }
 
+    private lateinit var catalogFragment: Fragment
+
     private lateinit var context: Context
 
 
@@ -29,6 +35,7 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
         val binding = ItemCatalogBinding.inflate(inflater, parent, false)
 
         context = parent.context
+        catalogFragment = parent.findFragment()
         //scaleType for loading animation
         binding.ivIcon.scaleType = ImageView.ScaleType.CENTER_CROP
         return CatalogViewHolder(binding)
@@ -43,8 +50,9 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
         with(holder.binding) {
 
             llSmileAndLikes.tag = catalogListItem
+            mcvRoot.tag = catalogListItem
 
-            ivIcon.load(catalogListItem.imgUrl) {
+            ivIcon.load(catalogListItem.imgUrl[0]) {
                 crossfade(true)
                 crossfade(2000)
                 placeholder(R.drawable.animate_rotate)
@@ -60,7 +68,7 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
 
             llSmileAndLikes.setOnClickListener(this@AdapterRecyclerViewCatalog)
             //ibBasket.setOnClickListener(this@AdapterRecyclerViewCatalog)
-            //root.setOnClickListener(this@AdapterRecyclerViewCatalog)
+            root.setOnClickListener(this@AdapterRecyclerViewCatalog)
 
             //if catalogItem has sale
             if (catalogListItem.price != catalogListItem.priceSale) {
@@ -119,6 +127,13 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
                     }
                     notifyItemChanged(catalogItem.id!!.toInt())
 
+                }
+                R.id.mcv_root -> {
+                    val direction = CatalogFragmentDirections.actionCatalogFragmentToItemDetailFragment(
+                            catalogItem
+                    )
+                    val navController = NavHostFragment.findNavController(catalogFragment)
+                    navController.navigate(direction)
                 }
                 else -> {
 

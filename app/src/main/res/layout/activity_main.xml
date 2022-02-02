@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/candy_nav" />
+        app:navGraph="@navigation/main_graph" />
 
     <View
         android:id="@+id/viewLine2"
