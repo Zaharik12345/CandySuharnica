@@ -2,6 +2,7 @@ package com.zakdroid.candysuharnica.ui.main.adapters
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.AnimatedVectorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,8 +17,6 @@ import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
 import com.zakdroid.candysuharnica.ui.main.fragments.CatalogFragmentDirections
-import io.codetail.animation.arcanimator.ArcAnimator
-import io.codetail.animation.arcanimator.Side
 
 class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
 
@@ -54,6 +53,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
 
             llSmileAndLikes.tag = catalogListItem
             mcvRoot.tag = catalogListItem
+            ibBasket.tag = catalogListItem
 
             ivIcon.load(catalogListItem.imgUrl[0]) {
                 crossfade(true)
@@ -139,10 +139,9 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                     navController.navigate(direction)
                 }
                 R.id.ib_basket -> {
-                    val basketIcon = binding.ibBasket
-                    val smile = binding.ivSmileLikes
-                    ArcAnimator.createArcAnimator(basketIcon,smile,
-                        90F, Side.RIGHT).setDuration(1000).start()
+                    binding.ibBasket.setImageResource(R.drawable.add_to_basket_anim)
+                    val animTransformBasket = binding.ibBasket.drawable as AnimatedVectorDrawable
+                    animTransformBasket.start()
                 }
                 else -> {
 
