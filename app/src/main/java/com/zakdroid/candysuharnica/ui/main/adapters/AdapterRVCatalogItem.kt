@@ -16,6 +16,9 @@ import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
 import com.zakdroid.candysuharnica.ui.main.fragments.CatalogFragmentDirections
+import io.codetail.animation.arcanimator.ArcAnimator
+import io.codetail.animation.arcanimator.ArcDebugView
+import io.codetail.animation.arcanimator.Side
 
 class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
 
@@ -29,10 +32,12 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
 
     private lateinit var context: Context
 
+    private lateinit var binding: ItemCatalogBinding
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatalogViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemCatalogBinding.inflate(inflater, parent, false)
+        binding = ItemCatalogBinding.inflate(inflater, parent, false)
 
         context = parent.context
         catalogFragment = parent.findFragment()
@@ -134,6 +139,12 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
                     )
                     val navController = NavHostFragment.findNavController(catalogFragment)
                     navController.navigate(direction)
+                }
+                R.id.ib_basket -> {
+                    val basketIcon = binding.ibBasket
+                    val smile = binding.ivSmileLikes
+                    ArcAnimator.createArcAnimator(basketIcon,smile,
+                        90F,Side.RIGHT).setDuration(1000).start()
                 }
                 else -> {
 
