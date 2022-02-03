@@ -32,8 +32,9 @@
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_basket.xml" value="0.2" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_catalog.xml" value="0.4" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_detail_catalog_item.xml" value="0.4" />
-        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/CandySuharnica/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/item_basket.xml" value="0.4" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/item_catalog.xml" value="0.6" />
         <entry key="..\:/CandySuharnica/app/src/main/res/layout/item_one_line_string.xml" value="0.24954710144927536" />

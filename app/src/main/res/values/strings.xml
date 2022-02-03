@@ -16,4 +16,12 @@
     <string name="my_orders_profile">Мои заказы</string>
     <string name="amount_example_xx">XX</string>
     <string name="price_example_xx_xx">XX.XX BYN</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="your_login">Your login</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="second_name">Second Name</string>
+    <string name="password">Password</string>
+    <string name="already_in_suharnica">Already in Suharnica? LOG IN</string>
+    <string name="logo_image">logo image</string>
 </resources>

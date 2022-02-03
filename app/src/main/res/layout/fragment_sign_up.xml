@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:id="@+id/iv_logo_sign_up_fragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/loading_screen_logo" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin_dimen"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_sign_up_fragment"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/stroke_width_dimen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:padding="@dimen/padding_dimen">
+
+            <TextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/golos_text_demibold"
+                android:text="@string/sign_up"
+                android:textColor="#000000"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="@+id/et_first_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:autofillHints=""
+                android:background="@drawable/shape_text"
+                android:ems="10"
+                android:fontFamily="@font/golos_text_regular"
+                android:gravity="center"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/et_second_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sign_up" />
+
+            <EditText
+                android:id="@+id/et_second_name"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_text"
+                android:ems="10"
+                android:gravity="center"
+                android:fontFamily="@font/golos_text_regular"
+                android:hint="@string/second_name"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/et_new_login"
+                app:layout_constraintTop_toBottomOf="@+id/et_first_name"
+                tools:ignore="TouchTargetSizeCheck"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/et_new_login"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_text"
+                android:ems="10"
+                android:gravity="center"
+                android:fontFamily="@font/golos_text_regular"
+                android:hint="@string/your_login"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/et_password_sign_up"
+                app:layout_constraintTop_toBottomOf="@+id/et_second_name"
+                tools:ignore="TouchTargetSizeCheck"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/et_password_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_text"
+                android:ems="10"
+                android:gravity="center"
+                android:fontFamily="@font/golos_text_regular"
+                android:hint="@string/password"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/et_repeat_password_sign_up"
+                app:layout_constraintTop_toBottomOf="@+id/et_new_login"
+                tools:ignore="TouchTargetSizeCheck"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/et_repeat_password_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_text"
+                android:ems="10"
+                android:gravity="center"
+                android:fontFamily="@font/golos_text_regular"
+                android:hint="@string/repeat_password"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_password_sign_up"
+                tools:ignore="TouchTargetSizeCheck"
+                android:autofillHints="" />
+
+            <Button
+                android:id="@+id/b_sign_up"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#D4FF00"
+                android:fontFamily="@font/golos_text_demibold"
+                android:text="@string/sign_up"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_repeat_password_sign_up"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/clickable_tv_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/already_in_suharnica"
+        android:textColor="#16486A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
