@@ -127,6 +127,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/golos_text_demibold"
                         android:textColor="@color/black"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="Макрон с малиной" />
@@ -135,6 +136,7 @@
                         android:id="@+id/tv_weight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_title_in_card_view"
                         tools:text="75 г" />
@@ -146,7 +148,7 @@
                         android:layout_marginEnd="@dimen/layout_margin_dimen"
                         android:fontFamily="@font/golos_text_demibold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                        android:textSize="24sp"
+                        android:textSize="26sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -159,6 +161,7 @@
                 android:id="@+id/tv_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/golos_text_regular"
                 android:padding="@dimen/padding_dimen"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -175,6 +178,7 @@
                 android:fontFamily="@font/golos_text_demibold"
                 android:text="Состав:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
@@ -245,6 +249,7 @@
                 android:text="Добавить в корзину"
 
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textSize="26sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

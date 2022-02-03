@@ -5,9 +5,9 @@
             <stroke android:width="2.3dp" android:color="#000000" />
             <padding
                 android:top="1dp"
-                android:left="1dp"
+                android:left="3dp"
                 android:bottom="1dp"
-                android:right="1dp"/>
+                android:right="3dp"/>
         </shape>
     </item>
 </selector>
