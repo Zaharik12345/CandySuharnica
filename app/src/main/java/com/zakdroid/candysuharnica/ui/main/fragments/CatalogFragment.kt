@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.zakdroid.candysuharnica.databinding.FragmentCatalogBinding
-import com.zakdroid.candysuharnica.ui.main.adapters.AdapterRecyclerViewCatalog
+import com.zakdroid.candysuharnica.ui.main.adapters.AdapterRVCatalog
 import com.zakdroid.candysuharnica.ui.main.viewModels.CatalogViewModel
 
 
@@ -16,7 +16,7 @@ class CatalogFragment : Fragment() {
 
     private lateinit var viewModel: CatalogViewModel
     private lateinit var binding: FragmentCatalogBinding
-    private lateinit var adapter: AdapterRecyclerViewCatalog
+    private lateinit var adapter: AdapterRVCatalog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class CatalogFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        adapter = AdapterRecyclerViewCatalog()
+        adapter = AdapterRVCatalog()
         viewModel.responseLiveData.observe(this, {
             adapter.catalogItems = it.catalogItems
         })

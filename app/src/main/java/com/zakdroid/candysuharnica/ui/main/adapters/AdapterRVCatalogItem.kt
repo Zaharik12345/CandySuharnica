@@ -17,10 +17,9 @@ import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
 import com.zakdroid.candysuharnica.ui.main.fragments.CatalogFragmentDirections
 import io.codetail.animation.arcanimator.ArcAnimator
-import io.codetail.animation.arcanimator.ArcDebugView
 import io.codetail.animation.arcanimator.Side
 
-class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
+class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
 
     var catalogItems: List<CatalogItem>? = emptyList()
         set(newValue) {
@@ -33,7 +32,6 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
     private lateinit var context: Context
 
     private lateinit var binding: ItemCatalogBinding
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatalogViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -71,9 +69,9 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
             tvName.text = catalogListItem.name
             val likes = catalogListItem.likes?.toDouble() ?: 0.0
 
-            llSmileAndLikes.setOnClickListener(this@AdapterRecyclerViewCatalog)
-            //ibBasket.setOnClickListener(this@AdapterRecyclerViewCatalog)
-            root.setOnClickListener(this@AdapterRecyclerViewCatalog)
+            llSmileAndLikes.setOnClickListener(this@AdapterRVCatalog)
+            ibBasket.setOnClickListener(this@AdapterRVCatalog)
+            root.setOnClickListener(this@AdapterRVCatalog)
 
             //if catalogItem has sale
             if (catalogListItem.price != catalogListItem.priceSale) {
@@ -144,7 +142,7 @@ class AdapterRecyclerViewCatalog : RecyclerView.Adapter<CatalogViewHolder>(), Vi
                     val basketIcon = binding.ibBasket
                     val smile = binding.ivSmileLikes
                     ArcAnimator.createArcAnimator(basketIcon,smile,
-                        90F,Side.RIGHT).setDuration(1000).start()
+                        90F, Side.RIGHT).setDuration(1000).start()
                 }
                 else -> {
 
