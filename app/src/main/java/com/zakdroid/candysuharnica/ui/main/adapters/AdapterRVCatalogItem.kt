@@ -6,6 +6,7 @@ import android.graphics.drawable.AnimatedVectorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -139,8 +140,9 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                     navController.navigate(direction)
                 }
                 R.id.ib_basket -> {
-                    binding.ibBasket.setImageResource(R.drawable.add_to_basket_anim)
-                    val animTransformBasket = binding.ibBasket.drawable as AnimatedVectorDrawable
+                    val basket = v as ImageButton
+                    basket.setImageResource(R.drawable.add_to_basket_anim)
+                    val animTransformBasket = basket.drawable as AnimatedVectorDrawable
                     animTransformBasket.start()
                 }
                 else -> {
