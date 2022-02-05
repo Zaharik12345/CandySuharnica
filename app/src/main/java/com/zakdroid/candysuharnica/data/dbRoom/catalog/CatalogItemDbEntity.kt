@@ -12,11 +12,11 @@ import com.zakdroid.candysuharnica.utils.StringArrayConverter
 data class CatalogItemDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "imgUrl") val imgUrl: List<String>,
-    @ColumnInfo(name = "likes") val likes: String,
+    @ColumnInfo(name = "likes") val likes: Int,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "price") val price: String,
-    @ColumnInfo(name = "priceSale") val priceSale: String,
-    @ColumnInfo(name = "weight") val weight: String,
+    @ColumnInfo(name = "price") val price: Double,
+    @ColumnInfo(name = "priceSale") val priceSale: Double,
+    @ColumnInfo(name = "weight") val weight: Int,
     @ColumnInfo(name = "about") val about: String,
     @ColumnInfo(name = "product_composition") val product_composition: List<String>,
     @ColumnInfo(name = "nutritional_value") val nutritional_value: List<String>,
@@ -24,7 +24,7 @@ data class CatalogItemDbEntity(
 ) {
 
     fun toCatalogItem(): CatalogItem = CatalogItem(
-        id = id.toString(),
+        id = id,
         name = name,
         type = type,
         weight = weight,

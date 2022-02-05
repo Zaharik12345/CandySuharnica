@@ -35,11 +35,11 @@ class ItemDetailFragment : Fragment(), View.OnClickListener {
 
 
         with(binding) {
-            tvLikes.text = catalogItem.likes
+            tvLikes.text = catalogItem.likes.toString()
             tvTitleInActionBar.text = catalogItem.name
             tvTitleInCardView.text = catalogItem.name
-            tvWeight.text = catalogItem.weight.plus(" г")
-            tvPrice.text = catalogItem.price.plus(" BYN")
+            tvWeight.text = catalogItem.weight.toString().plus(" г")
+            tvPrice.text = catalogItem.price.toString().plus(" BYN")
             tvDescription.text = catalogItem.about
 
             rvImage.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)

@@ -153,7 +153,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                     })
             }
 
-            tvWeight.text = catalogListItem.weight.plus(" г")
+            tvWeight.text = catalogListItem.weight.toString().plus(" г")
             tvName.text = catalogListItem.name
             val likes = catalogListItem.likes.toDouble()
 
@@ -167,8 +167,8 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 tvPriceSale.visibility = View.VISIBLE
                 vCross.visibility = View.VISIBLE
 
-                tvPrice.text = catalogListItem.priceSale.plus(" BYN")
-                tvPriceSale.text = catalogListItem.price.plus(" BYN")
+                tvPrice.text = catalogListItem.priceSale.toString().plus(" BYN")
+                tvPriceSale.text = catalogListItem.price.toString().plus(" BYN")
 
                 val colorLime = ContextCompat.getColor(
                     context,
@@ -178,7 +178,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 ibBasket.setBackgroundColor(colorLime)
 
             } else {
-                tvPrice.text = catalogListItem.price.plus(" BYN")
+                tvPrice.text = catalogListItem.price.toString().plus(" BYN")
 
                 tvPriceSale.visibility = View.INVISIBLE
                 vCross.visibility = View.INVISIBLE
