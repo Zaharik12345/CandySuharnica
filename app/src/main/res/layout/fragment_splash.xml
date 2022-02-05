@@ -10,6 +10,8 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/loading_screen_logo" />
+        android:src="@drawable/loading_screen_logo"
+        android:alpha="0.1"
+        tools:alpha="1"/>
 
 </RelativeLayout>

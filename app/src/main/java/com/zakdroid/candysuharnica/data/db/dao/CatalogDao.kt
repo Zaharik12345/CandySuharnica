@@ -7,15 +7,17 @@ import com.zakdroid.candysuharnica.data.db.entity.CatalogItemDbEntity
 interface CatalogDao {
 
     @Query("SELECT * FROM catalog")
-
     fun getAll(): List<CatalogItemDbEntity>
 
+    @Query("DELETE FROM catalog")
+    fun deleteTable()
+
     @Insert
-    fun insert(car: CatalogItemDbEntity)
+    fun insert(item: CatalogItemDbEntity)
 
     @Update
-    fun update(car: CatalogItemDbEntity)
+    fun update(item: CatalogItemDbEntity)
 
     @Delete
-    fun delete(car: CatalogItemDbEntity)
+    fun delete(item: CatalogItemDbEntity)
 }

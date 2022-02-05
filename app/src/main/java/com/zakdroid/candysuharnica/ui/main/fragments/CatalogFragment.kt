@@ -1,10 +1,10 @@
 package com.zakdroid.candysuharnica.ui.main.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.zakdroid.candysuharnica.databinding.FragmentCatalogBinding
@@ -27,12 +27,11 @@ class CatalogFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        adapter = AdapterRVCatalog()
-        viewModel.responseLiveData.observe(this, {
-            adapter.catalogItems = it.catalogItems
-        })
         binding = FragmentCatalogBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+
+        adapter = AdapterRVCatalog()
+        adapter.catalogItems = viewModel.getList()
+
         val layoutManager = GridLayoutManager(requireContext(),2)
         binding.recyclerViewCatalog.layoutManager = layoutManager
         binding.recyclerViewCatalog.adapter = adapter

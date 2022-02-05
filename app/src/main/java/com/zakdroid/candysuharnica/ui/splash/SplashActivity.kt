@@ -1,7 +1,7 @@
 package com.zakdroid.candysuharnica.ui.splash
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.zakdroid.candysuharnica.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

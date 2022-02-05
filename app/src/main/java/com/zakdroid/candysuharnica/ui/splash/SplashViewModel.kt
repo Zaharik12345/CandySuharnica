@@ -2,12 +2,12 @@ package com.zakdroid.candysuharnica.ui.splash
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
 import com.zakdroid.candysuharnica.App
 import com.zakdroid.candysuharnica.data.db.AppDatabase
+import com.zakdroid.candysuharnica.data.db.entity.CatalogItemDbEntity
+import com.zakdroid.candysuharnica.data.model.CatalogResponse
 import com.zakdroid.candysuharnica.data.repository.CatalogRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class SplashViewModel(
     private val repository: CatalogRepository = CatalogRepository()
@@ -15,13 +15,18 @@ class SplashViewModel(
 
     private var db: AppDatabase = App.instance?.getDatabase() ?: throw Exception("error")
 
-    init {
-        val responseLiveData = liveData(Dispatchers.IO) {
-            emit(repository.getResponseFromRealtimeDatabaseUsingCoroutines())
-        }
+    val responseLiveData = liveData(Dispatchers.IO) {
+        emit(repository.getResponseFromRealtimeDatabase())
+    }
 
-        fun fillDB(){
-           // db.catalogDao().insert()
+    fun fillDB(list: CatalogResponse) {
+        if(list.exception == null){
+            db.catalogDao().deleteTable()
+            for (item in list.catalogItems!!) {
+                val itemCatalog = CatalogItemDbEntity.fromCatalogItem(item)
+                db.catalogDao().insert(itemCatalog)
+            }
         }
     }
+
 }

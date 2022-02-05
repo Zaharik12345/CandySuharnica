@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "basket",
-    primaryKeys = ["id"],
     foreignKeys = [ForeignKey(
         entity = CatalogItemDbEntity::class,
         parentColumns = ["id"],
@@ -18,7 +17,7 @@ import androidx.room.PrimaryKey
 )
 data class BasketDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "product_id") val product_id: String,
+    @ColumnInfo(name = "product_id") val product_id: Int,
     @ColumnInfo(name = "count") val count: String,
     @ColumnInfo(name = "price_sum") val price_sum: String
 ) {

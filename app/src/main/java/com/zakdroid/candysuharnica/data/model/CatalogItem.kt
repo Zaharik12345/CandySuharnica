@@ -12,9 +12,9 @@ data class CatalogItem(
     val weight: String = "",
     val imgUrl: List<String> = emptyList(),
     val price: String = "",
-    val priceSale: String? = "",
+    val priceSale: String = "",
     var likes: String = "",
-    var about: String? = "",
+    var about: String = "",
     var product_composition: List<String> = emptyList(),
     var nutritional_value: List<String> = emptyList(),
     var isLiked: Boolean = false

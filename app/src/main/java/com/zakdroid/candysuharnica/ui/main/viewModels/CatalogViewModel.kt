@@ -1,17 +1,13 @@
 package com.zakdroid.candysuharnica.ui.main.viewModels
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
-import com.zakdroid.candysuharnica.data.repository.CatalogRepository
-import kotlinx.coroutines.Dispatchers
+import com.zakdroid.candysuharnica.App
+import com.zakdroid.candysuharnica.data.db.AppDatabase
 
-class CatalogViewModel (
-    private val repository: CatalogRepository = CatalogRepository()
-        ): ViewModel() {
+class CatalogViewModel : ViewModel() {
 
+    private var db: AppDatabase = App.instance?.getDatabase() ?: throw Exception("error")
 
-    val responseLiveData = liveData(Dispatchers.IO) {
-        emit(repository.getResponseFromRealtimeDatabaseUsingCoroutines())
-    }
+    fun getList() = db.catalogDao().getAll().map { it.toCatalogItem() }
 
 }

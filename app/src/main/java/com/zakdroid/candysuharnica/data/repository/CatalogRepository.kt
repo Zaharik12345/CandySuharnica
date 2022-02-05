@@ -10,7 +10,7 @@ class CatalogRepository constructor(
     private val rootRef: DatabaseReference = FirebaseDatabase.getInstance("https://candysuharnica-default-rtdb.europe-west1.firebasedatabase.app/").reference,
     private val productRef: DatabaseReference = rootRef.child("catalog")
 ) {
-    suspend fun getResponseFromRealtimeDatabaseUsingCoroutines(): CatalogResponse {
+    suspend fun getResponseFromRealtimeDatabase(): CatalogResponse {
         val response = CatalogResponse()
         try {
             response.catalogItems = productRef.get().await().children.map { snapShot ->
