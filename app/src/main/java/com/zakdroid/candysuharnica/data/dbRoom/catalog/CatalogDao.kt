@@ -1,7 +1,6 @@
-package com.zakdroid.candysuharnica.data.db.dao
+package com.zakdroid.candysuharnica.data.dbRoom.catalog
 
 import androidx.room.*
-import com.zakdroid.candysuharnica.data.db.entity.CatalogItemDbEntity
 
 @Dao
 interface CatalogDao {

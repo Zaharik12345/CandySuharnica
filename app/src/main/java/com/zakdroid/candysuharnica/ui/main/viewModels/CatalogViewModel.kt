@@ -2,7 +2,7 @@ package com.zakdroid.candysuharnica.ui.main.viewModels
 
 import androidx.lifecycle.ViewModel
 import com.zakdroid.candysuharnica.App
-import com.zakdroid.candysuharnica.data.db.AppDatabase
+import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
 
 class CatalogViewModel : ViewModel() {
 

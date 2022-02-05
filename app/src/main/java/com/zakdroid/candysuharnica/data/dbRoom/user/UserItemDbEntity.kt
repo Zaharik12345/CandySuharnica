@@ -1,4 +1,4 @@
-package com.zakdroid.candysuharnica.data.db.entity
+package com.zakdroid.candysuharnica.data.dbRoom.user
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

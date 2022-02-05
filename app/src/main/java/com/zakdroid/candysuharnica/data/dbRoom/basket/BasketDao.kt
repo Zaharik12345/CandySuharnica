@@ -1,8 +1,6 @@
-package com.zakdroid.candysuharnica.data.db.dao
+package com.zakdroid.candysuharnica.data.dbRoom.basket
 
 import androidx.room.*
-import com.zakdroid.candysuharnica.data.db.entity.BasketDbEntity
-import com.zakdroid.candysuharnica.data.db.entity.CatalogItemDbEntity
 
 @Dao
 interface BasketDao {

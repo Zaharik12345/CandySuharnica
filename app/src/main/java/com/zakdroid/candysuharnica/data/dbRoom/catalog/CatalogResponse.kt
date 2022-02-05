@@ -1,5 +1,4 @@
-package com.zakdroid.candysuharnica.data.model
-
+package com.zakdroid.candysuharnica.data.dbRoom.catalog
 
 
 data class CatalogResponse (

@@ -20,7 +20,7 @@
         tools:layout="@layout/fragment_detail_catalog_item">
         <argument
             android:name="item"
-            app:argType="com.zakdroid.candysuharnica.data.model.CatalogItem" />
+            app:argType="com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem" />
     </fragment>
     <fragment
         android:id="@+id/basketFragment"

@@ -2,8 +2,8 @@ package com.zakdroid.candysuharnica.data.repository
 
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.zakdroid.candysuharnica.data.model.CatalogItem
-import com.zakdroid.candysuharnica.data.model.CatalogResponse
+import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem
+import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogResponse
 import kotlinx.coroutines.tasks.await
 
 class CatalogRepository constructor(

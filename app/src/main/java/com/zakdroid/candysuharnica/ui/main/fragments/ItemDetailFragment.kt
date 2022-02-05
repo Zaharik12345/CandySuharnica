@@ -10,7 +10,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.zakdroid.candysuharnica.R
-import com.zakdroid.candysuharnica.data.model.CatalogItem
+import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.FragmentDetailCatalogItemBinding
 import com.zakdroid.candysuharnica.ui.main.adapters.AdapterRCImageSlider
 import com.zakdroid.candysuharnica.ui.main.adapters.AdapterRVOneLineString2Grid

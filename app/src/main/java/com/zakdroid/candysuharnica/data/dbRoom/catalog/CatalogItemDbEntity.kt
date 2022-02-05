@@ -1,10 +1,9 @@
-package com.zakdroid.candysuharnica.data.db.entity
+package com.zakdroid.candysuharnica.data.dbRoom.catalog
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.zakdroid.candysuharnica.data.model.CatalogItem
 import com.zakdroid.candysuharnica.utils.StringArrayConverter
 
 @Entity(tableName = "catalog")

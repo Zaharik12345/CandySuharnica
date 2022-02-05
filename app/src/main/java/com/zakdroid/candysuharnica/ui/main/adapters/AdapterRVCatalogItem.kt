@@ -14,8 +14,12 @@ import androidx.fragment.app.findFragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.zakdroid.candysuharnica.App
 import com.zakdroid.candysuharnica.R
-import com.zakdroid.candysuharnica.data.model.CatalogItem
+import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
+import com.zakdroid.candysuharnica.data.dbRoom.basket.BasketDbEntity
+import com.zakdroid.candysuharnica.data.dbRoom.basket.BasketItem
+import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
 import com.zakdroid.candysuharnica.ui.main.fragments.CatalogFragmentDirections
 
@@ -32,6 +36,8 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
     private lateinit var context: Context
 
     private lateinit var binding: ItemCatalogBinding
+
+    private var db: AppDatabase = App.instance?.getDatabase() ?: throw Exception("error")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatalogViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -79,11 +85,51 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 basket.setImageResource(R.drawable.add_to_basket_anim)
                 val animTransformBasket = basket.drawable as AnimatedVectorDrawable
                 animTransformBasket.start()
+
+                addToBasket(catalogItem)
             }
             else -> {
 
             }
         }
+    }
+
+    private fun addToBasket(catalogItem: CatalogItem) {
+
+        val basketItems = db.basketDao().getAll().map { it.toBasketItem() }
+        for (item in basketItems) {
+            if (item.productId == catalogItem.id.toInt())
+                db.basketDao().update(
+                    BasketDbEntity.fromBasketItem(
+                        BasketItem(
+                            item.id,
+                            item.productId,
+                            item.count + 1,
+                            item.amountPrice + catalogItem.price.toInt()
+                        )
+                    )
+                )
+            else db.basketDao().insert(
+                BasketDbEntity.fromBasketItem(
+                    BasketItem(
+                        id = 0,
+                        productId = catalogItem.id.toInt(),
+                        count = 1,
+                        amountPrice = catalogItem.price.toInt()
+                    )
+                )
+            )
+        }
+        if (basketItems.isEmpty()) db.basketDao().insert(
+            BasketDbEntity.fromBasketItem(
+                BasketItem(
+                    id = 0,
+                    productId = catalogItem.id.toInt(),
+                    count = 1,
+                    amountPrice = catalogItem.price.toInt()
+                )
+            )
+        )
     }
 
     private fun bindView(holder: CatalogViewHolder, catalogListItem: CatalogItem) {

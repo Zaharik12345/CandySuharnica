@@ -1,4 +1,4 @@
-package com.zakdroid.candysuharnica.data.db.dao
+package com.zakdroid.candysuharnica.data.dbRoom.user
 
 import androidx.room.Dao
 

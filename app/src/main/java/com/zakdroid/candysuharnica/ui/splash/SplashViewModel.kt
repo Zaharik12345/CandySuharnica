@@ -3,9 +3,9 @@ package com.zakdroid.candysuharnica.ui.splash
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.zakdroid.candysuharnica.App
-import com.zakdroid.candysuharnica.data.db.AppDatabase
-import com.zakdroid.candysuharnica.data.db.entity.CatalogItemDbEntity
-import com.zakdroid.candysuharnica.data.model.CatalogResponse
+import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
+import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItemDbEntity
+import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogResponse
 import com.zakdroid.candysuharnica.data.repository.CatalogRepository
 import kotlinx.coroutines.Dispatchers
 
