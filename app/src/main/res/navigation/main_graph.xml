@@ -32,4 +32,14 @@
         android:name="com.zakdroid.candysuharnica.ui.main.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.zakdroid.candysuharnica.ui.main.fragments.LogInAndSignUp.LogInFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.zakdroid.candysuharnica.ui.main.fragments.LogInAndSignUp.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
 </navigation>
