@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.zakdroid.candysuharnica.ui.splash.SplashFragment"
+        android:name="com.zakdroid.candysuharnica.screens.splash.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash"/>
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.zakdroid.candysuharnica.ui.main.MainActivity"
+        android:name="com.zakdroid.candysuharnica.screens.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 </navigation>

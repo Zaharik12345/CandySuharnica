@@ -12,21 +12,27 @@ import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItemDbEntity
         entity = CatalogItemDbEntity::class,
         parentColumns = ["id"],
         childColumns = ["product_id"],
-        onDelete = ForeignKey.CASCADE,
+        //onDelete = ForeignKey.CASCADE,
         onUpdate = ForeignKey.CASCADE
     )]
 )
 data class BasketDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "product_id") val productId: Int,
+    @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "count") val count: Int,
-    @ColumnInfo(name = "price_sum") val amountPrice: Int
+    @ColumnInfo(name = "imgURL") val imgURL: String,
+    @ColumnInfo(name = "price_sum") val amountPrice: Double,
+    @ColumnInfo(name = "weight_sum") val amountWeight: Int
 ) {
 
     fun toBasketItem(): BasketItem = BasketItem(
         id = id,
         productId = productId,
+        name = name,
         count = count,
+        imgURL= imgURL,
+        amountWeight = amountWeight,
         amountPrice = amountPrice
     )
 
@@ -35,7 +41,10 @@ data class BasketDbEntity(
             return BasketDbEntity(
                 id = 0,
                 productId = item.productId,
+                name = item.name,
                 count = item.count,
+                imgURL = item.imgURL,
+                amountWeight = item.amountWeight,
                 amountPrice = item.amountPrice
             )
         }

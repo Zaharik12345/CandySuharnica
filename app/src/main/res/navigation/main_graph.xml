@@ -6,7 +6,7 @@
     app:startDestination="@id/catalogFragment">
     <fragment
         android:id="@+id/catalogFragment"
-        android:name="com.zakdroid.candysuharnica.ui.main.fragments.CatalogFragment"
+        android:name="com.zakdroid.candysuharnica.screens.catalog.CatalogFragment"
         android:label="CatalogFragment"
         tools:layout="@layout/fragment_catalog">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemDetailFragment"
-        android:name="com.zakdroid.candysuharnica.ui.main.fragments.ItemDetailFragment"
+        android:name="com.zakdroid.candysuharnica.screens.detail.ItemDetailFragment"
         android:label="ItemDetailFragment"
         tools:layout="@layout/fragment_detail_catalog_item">
         <argument
@@ -24,22 +24,26 @@
     </fragment>
     <fragment
         android:id="@+id/basketFragment"
-        android:name="com.zakdroid.candysuharnica.ui.main.fragments.BasketFragment"
+        android:name="com.zakdroid.candysuharnica.screens.basket.BasketFragment"
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket"/>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.zakdroid.candysuharnica.ui.main.fragments.ProfileFragment"
+        android:id="@+id/profileFragment1"
+        android:name="com.zakdroid.candysuharnica.screens.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/logInFragment"
-        android:name="com.zakdroid.candysuharnica.ui.main.fragments.LogInAndSignUp.LogInFragment"
+        android:id="@+id/profileFragment"
+        android:name="com.zakdroid.candysuharnica.screens.logInAndSignUp.LogInFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_logInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.zakdroid.candysuharnica.ui.main.fragments.LogInAndSignUp.SignUpFragment"
+        android:name="com.zakdroid.candysuharnica.screens.logInAndSignUp.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
 </navigation>

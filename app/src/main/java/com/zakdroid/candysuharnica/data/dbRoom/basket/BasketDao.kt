@@ -11,6 +11,12 @@ interface BasketDao {
     @Query("DELETE FROM basket")
     fun deleteTable()
 
+    @Query("SELECT SUM(count) FROM basket")
+    fun getCount() : Int
+
+    @Query("SELECT SUM(price_sum) FROM basket")
+    fun getAmountPrice() : Int
+
     @Insert
     fun insert(item: BasketDbEntity)
 

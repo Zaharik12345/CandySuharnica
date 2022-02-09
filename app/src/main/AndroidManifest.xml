@@ -15,7 +15,7 @@
 
 
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name="com.zakdroid.candysuharnica.screens.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".screens.MainActivity" />
 
     </application>
 </manifest>

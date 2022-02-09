@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.fragments.BasketFragment">
+    tools:context=".screens.basket.BasketFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardViewSearch"
@@ -52,14 +52,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment1"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_basket"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/viewLine2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_basket"/>
+
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardViewOrder"
