@@ -42,8 +42,5 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         binding.tvPriceOfOrder.text = price.toString().plus(" BYN")
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = BasketFragment()
-    }
+
 }

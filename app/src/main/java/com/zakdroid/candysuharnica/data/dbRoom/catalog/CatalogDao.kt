@@ -11,6 +11,9 @@ interface CatalogDao {
     @Query("DELETE FROM catalog")
     fun deleteTable()
 
+    @Query("SELECT * FROM catalog WHERE type = :type")
+    fun getFromType(type:String) : List<CatalogItemDbEntity>
+
     @Insert
     fun insert(item: CatalogItemDbEntity)
 

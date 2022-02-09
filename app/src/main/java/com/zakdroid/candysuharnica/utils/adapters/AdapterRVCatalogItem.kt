@@ -28,7 +28,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
     var catalogItems: List<CatalogItem> = emptyList()
         set(newValue) {
             field = newValue
-            //notifyDataSetChanged()
+            notifyDataSetChanged()
         }
 
     private lateinit var catalogFragment: Fragment

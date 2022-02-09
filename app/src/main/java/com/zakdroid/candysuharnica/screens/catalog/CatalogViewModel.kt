@@ -1,16 +1,25 @@
 package com.zakdroid.candysuharnica.screens.catalog
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+
 import com.zakdroid.candysuharnica.App
 import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
 import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem
 
-class CatalogViewModel : ViewModel() {
 
-    private var db: AppDatabase = App.instance?.getDatabase() ?: throw Exception("error")
+class CatalogViewModel(application: Application) : AndroidViewModel(application) {
 
-    fun getList() = db.catalogDao().getAll().map { it.toCatalogItem() }
 
-    //fun getListType(List<CatalogItem>) = Lis
+    private val db: AppDatabase = App.instance?.getDatabase() ?: throw Exception("error")
+    private val listItems = db.catalogDao().getAll().map { it.toCatalogItem() }
+    private val listTypeOfItems = listItems.map { it.type }.distinct()
+
+    fun getListFromType(type: String): List<CatalogItem> {
+        return if (type == CatalogFragment.START_WORD) listItems
+        else db.catalogDao().getFromType(type).map { it.toCatalogItem() }
+    }
+
+    fun getListType() = listTypeOfItems
 
 }
