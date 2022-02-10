@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.zakdroid.candysuharnica.R
 
-class LogInFragment: Fragment() {
+class LoginFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -17,6 +17,6 @@ class LogInFragment: Fragment() {
 
     companion object{
         @JvmStatic
-        fun newInstance() = LogInFragment()
+        fun newInstance() = LoginFragment()
     }
 }
