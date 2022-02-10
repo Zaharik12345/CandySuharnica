@@ -5,8 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseUser
 import com.zakdroid.candysuharnica.data.repository.AuthRepository
 
-class LoginAndSignUpViewModel(
+class LoginViewModel(
     val authRepository: AuthRepository = AuthRepository()
 ) : ViewModel() {
-
 }

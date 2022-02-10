@@ -13,7 +13,7 @@ class FirebaseSource {
 
     fun login(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {result ->
-            if (!result.isSuccessful) {
+            if (result.isSuccessful) {
                 userMutableLiveData.postValue(firebaseAuth.currentUser)
             }
         }
