@@ -1,21 +1,27 @@
 package com.zakdroid.candysuharnica.screens.logInAndSignUp
 
 import androidx.lifecycle.ViewModel
-import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.NavController
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginViewModel : ViewModel() {
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
-    fun login(username: String, password: String):Boolean {
+    private lateinit var navController: NavController
+
+    fun login(username: String, password: String) {
         mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 val direction = LoginFragmentDirections.actionProfileFragmentToProfileFragment1()
-
+                navController.navigate(direction)
             } else {
 
             }
         }
 
+    }
+
+    fun setNavController(navController: NavController) {
+        this.navController = navController
     }
 }

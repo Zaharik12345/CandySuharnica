@@ -5,17 +5,38 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.zakdroid.candysuharnica.R
+import com.zakdroid.candysuharnica.databinding.FragmentLoginBinding
+import com.zakdroid.candysuharnica.screens.catalog.CatalogViewModel
 
 class LoginFragment: Fragment() {
+
+    private lateinit var viewModel: LoginViewModel
+    private lateinit var binding: FragmentLoginBinding
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel.setNavController(findNavController())
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
-        return inflater.inflate(R.layout.fragment_login,container,false)
+        binding  = FragmentLoginBinding.inflate(inflater, container, false)
+
+        binding.bSignUp.setOnClickListener {
+            viewModel.login(
+                binding.etLogin.text.toString(),
+                binding.etPassword.text.toString())
+        }
+
+        return binding.root
     }
 
 }
