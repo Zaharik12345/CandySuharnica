@@ -20,6 +20,10 @@ class LoginViewModel : ViewModel() {
         }
 
     }
+    fun goToSignUp(){
+        val direction =LoginFragmentDirections.actionProfileFragmentToSignUpFragment()
+        navController.navigate(direction)
+    }
 
     fun setNavController(navController: NavController) {
         this.navController = navController

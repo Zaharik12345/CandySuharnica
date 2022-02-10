@@ -35,6 +35,9 @@ class LoginFragment: Fragment() {
                 binding.etLogin.text.toString(),
                 binding.etPassword.text.toString())
         }
+        binding.clickableTvSignUp.setOnClickListener {
+            viewModel.goToSignUp()
+        }
 
         return binding.root
     }
