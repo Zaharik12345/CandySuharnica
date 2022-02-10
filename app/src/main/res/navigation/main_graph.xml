@@ -34,7 +34,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.zakdroid.candysuharnica.screens.logInAndSignUp.LogInFragment"
+        android:name="com.zakdroid.candysuharnica.screens.logInAndSignUp.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action

@@ -18,7 +18,7 @@
     <string name="price_example_xx_xx">XX.XX BYN</string>
     <string name="sign_up">Sign Up</string>
     <string name="first_name">First Name</string>
-    <string name="your_login">Your login</string>
+    <string name="your_login">Your Username</string>
     <string name="repeat_password">Repeat Password</string>
     <string name="second_name">Second Name</string>
     <string name="password">Password</string>
