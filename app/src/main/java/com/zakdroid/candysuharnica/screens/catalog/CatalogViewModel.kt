@@ -1,14 +1,11 @@
 package com.zakdroid.candysuharnica.screens.catalog
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-
+import androidx.lifecycle.ViewModel
 import com.zakdroid.candysuharnica.App
 import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
-import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem
 
 
-class CatalogViewModel(application: Application) : AndroidViewModel(application) {
+class CatalogViewModel : ViewModel() {
 
 
     private val db: AppDatabase = App.instance?.getDatabase() ?: throw Exception("error")

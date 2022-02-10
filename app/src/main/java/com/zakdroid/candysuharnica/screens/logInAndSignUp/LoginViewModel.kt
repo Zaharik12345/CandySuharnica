@@ -1,11 +1,21 @@
 package com.zakdroid.candysuharnica.screens.logInAndSignUp
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.firebase.auth.FirebaseUser
-import com.zakdroid.candysuharnica.data.repository.AuthRepository
+import androidx.navigation.fragment.NavHostFragment
+import com.google.firebase.auth.FirebaseAuth
 
-class LoginViewModel(
-    val authRepository: AuthRepository = AuthRepository()
-) : ViewModel() {
+class LoginViewModel : ViewModel() {
+    private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
+    fun login(username: String, password: String):Boolean {
+        mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener {
+            if (it.isSuccessful) {
+                val direction = LoginFragmentDirections.actionProfileFragmentToProfileFragment1()
+
+            } else {
+
+            }
+        }
+
+    }
 }

@@ -38,7 +38,10 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_logInFragment_to_signUpFragment"
+            android:id="@+id/action_profileFragment_to_profileFragment1"
+            app:destination="@id/profileFragment1" />
+        <action
+            android:id="@+id/action_profileFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
