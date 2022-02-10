@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.chip.Chip
@@ -21,7 +21,10 @@ class CatalogFragment : Fragment() {
 
     private lateinit var viewModel: CatalogViewModel
     private lateinit var binding: FragmentCatalogBinding
-    private lateinit var adapter: AdapterRVCatalog
+
+    private val adapter = AdapterRVCatalog()
+    private var currentType = START_TYPE
+    private var currentQuery = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,27 +39,34 @@ class CatalogFragment : Fragment() {
 
         setChips()
 
-        adapter = AdapterRVCatalog()
-        adapter.catalogItems = viewModel.getListFromType(START_WORD)
+        notifyRecyclerViewItem()
 
         val layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerViewCatalog.layoutManager = layoutManager
         binding.recyclerViewCatalog.adapter = adapter
+        binding.etSearch.addTextChangedListener {
+            currentQuery = it.toString()
+            notifyRecyclerViewItem()
+        }
 
         return binding.root
     }
 
     private fun setChips() {
         val listType = viewModel.getListType()
-        createChip(START_WORD)
+        createChip(START_TYPE)
         listType.forEach {
             createChip(it)
         }
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
             val checkedChip = group[checkedId]
-            val typeChip = (checkedChip as Chip).text.toString()
-            adapter.catalogItems = viewModel.getListFromType(typeChip)
+            currentType = (checkedChip as Chip).text.toString()
+            notifyRecyclerViewItem()
         }
+    }
+
+    private fun notifyRecyclerViewItem() {
+        adapter.catalogItems = viewModel.getList(currentQuery,currentType)
     }
 
     private fun createChip(str: String) {
@@ -66,7 +76,7 @@ class CatalogFragment : Fragment() {
         chip.chipStrokeWidth = 5f
         chip.isCheckable = true
         chip.isCheckedIconVisible = false
-        if (str == START_WORD) chip.isChecked = true
+        if (str == START_TYPE) chip.isChecked = true
         val colorStateListBackground =
             ContextCompat.getColorStateList(requireContext(), R.color.chip_background_color)
         chip.chipBackgroundColor = colorStateListBackground
@@ -78,6 +88,6 @@ class CatalogFragment : Fragment() {
     }
 
     companion object {
-        const val START_WORD = "Все"
+        const val START_TYPE = "Все"
     }
 }

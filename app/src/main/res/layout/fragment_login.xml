@@ -47,54 +47,44 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField"
+                android:id="@+id/et_login"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="label"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/golos_text_regular"
+                android:hint="login"
 
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_login">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/et_username"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/shape_text"
-                android:ems="10"
-                android:fontFamily="@font/golos_text_regular"
-                android:hint="Username"
-                android:inputType="text"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_login" />
-
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_password"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/shape_text"
-                android:ems="10"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/golos_text_regular"
-                android:hint="Password"
-                android:inputType="textPersonName"
-                app:layout_constraintStart_toStartOf="@+id/et_username"
-                app:layout_constraintTop_toBottomOf="@+id/et_username" />
+                android:hint="@string/password"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_login"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <Button
                 android:id="@+id/b_sign_up"

@@ -15,11 +15,13 @@ class CatalogViewModel(application: Application) : AndroidViewModel(application)
     private val listItems = db.catalogDao().getAll().map { it.toCatalogItem() }
     private val listTypeOfItems = listItems.map { it.type }.distinct()
 
-    fun getListFromType(type: String): List<CatalogItem> {
-        return if (type == CatalogFragment.START_WORD) listItems
-        else db.catalogDao().getFromType(type).map { it.toCatalogItem() }
-    }
-
     fun getListType() = listTypeOfItems
+
+    fun getList(query: String, type: String) =
+        db.catalogDao()
+            .getFromTypeAndSearch(
+                type = type.replace(CatalogFragment.START_TYPE,"%"),
+                query = query.plus("%"))
+            .map { it.toCatalogItem() }
 
 }

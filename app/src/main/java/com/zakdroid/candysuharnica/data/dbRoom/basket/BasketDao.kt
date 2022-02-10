@@ -17,6 +17,9 @@ interface BasketDao {
     @Query("SELECT SUM(price_sum) FROM basket")
     fun getAmountPrice() : Int
 
+    @Query("SELECT * FROM basket WHERE name LIKE :query")
+    fun getListFromQuery(query: String): List<BasketDbEntity>
+
     @Insert
     fun insert(item: BasketDbEntity)
 
