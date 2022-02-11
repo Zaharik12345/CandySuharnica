@@ -60,6 +60,9 @@
         <entry key="..\:/Users/iliar/AndroidStudioProjects/CandySuharnica/app/src/main/res/menu/bottom_menu.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/iliar/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/btn_default_holo_light.xml" value="0.36354166666666665" />
         <entry key="app/src/main/res/drawable/add_to_basket_anim.xml" value="0.2984375" />
+        <entry key="app/src/main/res/drawable/button_background_color.xml" value="0.233" />
+        <entry key="app/src/main/res/drawable/chip_background_color.xml" value="0.233" />
+        <entry key="app/src/main/res/drawable/chip_background_text.xml" value="0.233" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2002926225036917" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.10377358490566038" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16261398176291794" />

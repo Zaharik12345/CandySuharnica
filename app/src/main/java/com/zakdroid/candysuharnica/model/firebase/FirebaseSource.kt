@@ -1,4 +1,4 @@
-package com.zakdroid.candysuharnica.data.firebase
+package com.zakdroid.candysuharnica.model.firebase
 
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth

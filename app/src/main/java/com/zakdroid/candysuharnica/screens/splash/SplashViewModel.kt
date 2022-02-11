@@ -3,10 +3,10 @@ package com.zakdroid.candysuharnica.screens.splash
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.zakdroid.candysuharnica.App
-import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
-import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItemDbEntity
-import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogResponse
-import com.zakdroid.candysuharnica.data.repository.CatalogRepository
+import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogResponse
+import com.zakdroid.candysuharnica.model.repository.CatalogRepository
 import kotlinx.coroutines.Dispatchers
 
 class SplashViewModel(

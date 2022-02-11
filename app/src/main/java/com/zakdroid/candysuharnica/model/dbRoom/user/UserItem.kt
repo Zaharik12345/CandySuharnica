@@ -1,4 +1,4 @@
-package com.zakdroid.candysuharnica.data.dbRoom.user
+package com.zakdroid.candysuharnica.model.dbRoom.user
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/catalogFragment"
         android:name="com.zakdroid.candysuharnica.screens.catalog.CatalogFragment"
-        android:label="CatalogFragment"
+        android:label="fragment_catalog"
         tools:layout="@layout/fragment_catalog">
         <action
             android:id="@+id/action_catalogFragment_to_itemDetailFragment"
@@ -16,11 +16,11 @@
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="com.zakdroid.candysuharnica.screens.detail.ItemDetailFragment"
-        android:label="ItemDetailFragment"
+        android:label="fragment_item_Detail"
         tools:layout="@layout/fragment_detail_catalog_item">
         <argument
             android:name="item"
-            app:argType="com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem" />
+            app:argType="com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem" />
     </fragment>
     <fragment
         android:id="@+id/basketFragment"
@@ -28,25 +28,40 @@
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket"/>
     <fragment
-        android:id="@+id/profileFragment1"
+        android:id="@+id/profileFragment"
         android:name="com.zakdroid.candysuharnica.screens.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.zakdroid.candysuharnica.screens.logInAndSignUp.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_profileFragment_to_profileFragment1"
-            app:destination="@id/profileFragment1" />
+        tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.zakdroid.candysuharnica.screens.logInAndSignUp.LoginFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_login" >
+
+        <action
+            android:id="@+id/action_signInFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.zakdroid.candysuharnica.screens.logInAndSignUp.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
 </navigation>

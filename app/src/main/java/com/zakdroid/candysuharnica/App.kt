@@ -2,7 +2,7 @@ package com.zakdroid.candysuharnica
 
 import android.app.Application
 import androidx.room.Room
-import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
+import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
 
 class App : Application() {
 

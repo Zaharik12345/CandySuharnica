@@ -12,7 +12,7 @@ class LoginViewModel : ViewModel() {
     fun login(username: String, password: String) {
         mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener {
             if (it.isSuccessful) {
-                val direction = LoginFragmentDirections.actionProfileFragmentToProfileFragment1()
+                val direction = LoginFragmentDirections.actionSignInFragmentToProfileFragment()
                 navController.navigate(direction)
             } else {
 
@@ -21,7 +21,7 @@ class LoginViewModel : ViewModel() {
 
     }
     fun goToSignUp(){
-        val direction =LoginFragmentDirections.actionProfileFragmentToSignUpFragment()
+        val direction =LoginFragmentDirections.actionSignInFragmentToSignUpFragment()
         navController.navigate(direction)
     }
 

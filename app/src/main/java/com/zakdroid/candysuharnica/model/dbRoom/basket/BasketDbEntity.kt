@@ -1,10 +1,10 @@
-package com.zakdroid.candysuharnica.data.dbRoom.basket
+package com.zakdroid.candysuharnica.model.dbRoom.basket
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItemDbEntity
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 
 @Entity(
     tableName = "basket",

@@ -1,4 +1,4 @@
-package com.zakdroid.candysuharnica.data.dbRoom.basket
+package com.zakdroid.candysuharnica.model.dbRoom.basket
 
 data class BasketItem(
     val id: Int,

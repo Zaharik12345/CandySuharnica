@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.children
 import androidx.core.view.get
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.chip.Chip
@@ -59,7 +61,7 @@ class CatalogFragment : Fragment() {
             createChip(it)
         }
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
-            val checkedChip = group[checkedId]
+            val checkedChip = group[checkedId % listType.size]
             currentType = (checkedChip as Chip).text.toString()
             notifyRecyclerViewItem()
         }
@@ -86,6 +88,8 @@ class CatalogFragment : Fragment() {
         chip.setTextColor(colorStateListText)
         binding.chipGroup.addView(chip)
     }
+
+
 
     companion object {
         const val START_TYPE = "Все"

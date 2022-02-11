@@ -31,17 +31,15 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:padding="@dimen/padding_dimen">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tv_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/golos_text_demibold"
-                android:text="Login"
-                android:textColor="#000000"
+                android:layout_margin="@dimen/layout_special_margin_dimen"
+                android:text="@string/sing_inn"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textSize="26sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,12 +47,13 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_edit_login"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="@dimen/layout_margin_dimen"
+                android:layout_marginTop="@dimen/layout_margin_dimen"
+                android:layout_marginEnd="@dimen/layout_margin_dimen"
                 android:fontFamily="@font/golos_text_regular"
-                android:hint="login"
-
+                android:hint="@string/mail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_login">
@@ -62,30 +61,32 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_login"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_edit_password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="@dimen/layout_margin_dimen"
+                android:layout_marginTop="@dimen/layout_margin_dimen"
+                android:layout_marginEnd="@dimen/layout_margin_dimen"
                 android:fontFamily="@font/golos_text_regular"
                 android:hint="@string/password"
-
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_edit_login"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/til_edit_login">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
 
 
             <Button
@@ -94,30 +95,28 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#D4FF00"
                 android:fontFamily="@font/golos_text_demibold"
-                android:text="Log in"
+                android:text="@string/log_in"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_edit_password" />
-
-            <TextView
-                android:id="@+id/clickable_tv_sign_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="New to Suharnica? SIGN UP"
-                android:textColor="#16486A"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/b_sign_up"
-                tools:ignore="TouchTargetSizeCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <TextView
+        android:id="@+id/clickable_tv_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/new_to_sycharnica_sing_up"
+        android:textColor="#16486A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck"
+         />
 </androidx.constraintlayout.widget.ConstraintLayout>

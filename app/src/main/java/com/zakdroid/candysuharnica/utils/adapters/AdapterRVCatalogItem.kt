@@ -1,6 +1,7 @@
 package com.zakdroid.candysuharnica.utils.adapters
 
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.view.LayoutInflater
@@ -12,28 +13,55 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.findFragment
 import androidx.navigation.fragment.NavHostFragment
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.zakdroid.candysuharnica.App
 import com.zakdroid.candysuharnica.R
-import com.zakdroid.candysuharnica.data.dbRoom.AppDatabase
-import com.zakdroid.candysuharnica.data.dbRoom.basket.BasketDbEntity
-import com.zakdroid.candysuharnica.data.dbRoom.basket.BasketItem
-import com.zakdroid.candysuharnica.data.dbRoom.catalog.CatalogItem
+import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
+import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketDbEntity
+import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketItem
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 import com.zakdroid.candysuharnica.screens.catalog.CatalogFragmentDirections
+
+class CatalogItemsDiffUtil(
+    private val newList: List<CatalogItem>,
+    private val oldList: List<CatalogItem>
+) : DiffUtil.Callback() {
+    override fun getOldListSize(): Int = oldList.size
+
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        val oldItem = oldList[oldItemPosition]
+        val newItem = newList[newItemPosition]
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        val oldItem = oldList[oldItemPosition]
+        val newItem = newList[newItemPosition]
+        return oldItem == newItem
+    }
+}
 
 class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
 
     var catalogItems: List<CatalogItem> = emptyList()
         set(newValue) {
+            val diffUtil = CatalogItemsDiffUtil(newValue, field)
+            val diffResult = DiffUtil.calculateDiff(diffUtil)
             field = newValue
-            notifyDataSetChanged()
+            diffResult.dispatchUpdatesTo(this)
         }
+
 
     private lateinit var catalogFragment: Fragment
 
     private lateinit var context: Context
+    private val resource = Resources.getSystem()
 
     private lateinit var binding: ItemCatalogBinding
 
@@ -65,13 +93,17 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
 
         when (v.id) {
             R.id.ll_smile_and_likes -> {
-
-                with(catalogItems.firstOrNull { it.id == catalogItem.id }) {
+                val list = mutableListOf<CatalogItem>()
+                catalogItems.forEach { list.add(it.copy()) }
+                with(list.firstOrNull { it.id == catalogItem.id }) {
                     if (this != null)
                         isLiked = !isLiked
                 }
-                notifyItemChanged(catalogItem.id)
-
+                catalogItems = list
+                /*val db = App.instance?.getDatabase() ?: throw Exception("error")
+                with(catalogItem) {isLiked = !isLiked}
+                val itemEntity = CatalogItemDbEntity.fromCatalogItem(catalogItem)
+                db.catalogDao().update(itemEntity)*/
             }
             R.id.mcv_root -> {
                 val direction = CatalogFragmentDirections.actionCatalogFragmentToItemDetailFragment(

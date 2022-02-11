@@ -29,15 +29,14 @@ class SignUpFragment: Fragment() {
 
         binding.bSignUp.setOnClickListener {
             viewModel.register(
-                binding.etNewLogin.text.toString(),
-                binding.etPasswordSignUp.text.toString()
+                binding.etMail.text.toString(),
+                binding.etPassword.text.toString()
             )
+        }
+        binding.clickableTvSignIn.setOnClickListener {
+            viewModel.goToSignIn()
         }
         return binding.root
     }
 
-    companion object{
-        @JvmStatic
-        fun newInstance() = SignUpFragment()
-    }
 }

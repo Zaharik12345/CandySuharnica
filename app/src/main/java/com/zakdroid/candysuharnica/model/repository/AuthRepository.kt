@@ -1,6 +1,6 @@
-package com.zakdroid.candysuharnica.data.repository
+package com.zakdroid.candysuharnica.model.repository
 
-import com.zakdroid.candysuharnica.data.firebase.FirebaseSource
+import com.zakdroid.candysuharnica.model.firebase.FirebaseSource
 
 class AuthRepository {
     class UserRepository (

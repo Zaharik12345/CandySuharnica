@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.zakdroid.candysuharnica.data.dbRoom.basket.BasketItem
+import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketItem
 import com.zakdroid.candysuharnica.databinding.ItemBasketBinding
 
 class AdapterRCBasket : RecyclerView.Adapter<BasketHolder>() {

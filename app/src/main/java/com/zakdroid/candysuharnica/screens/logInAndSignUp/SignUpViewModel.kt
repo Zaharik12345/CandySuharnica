@@ -2,6 +2,7 @@ package com.zakdroid.candysuharnica.screens.logInAndSignUp
 
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpViewModel() : ViewModel() {
@@ -12,7 +13,7 @@ class SignUpViewModel() : ViewModel() {
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task->
                 if(task.isSuccessful){
-                    val direction = LoginFragmentDirections.actionProfileFragmentToProfileFragment1()
+                    val direction = SignUpFragmentDirections.actionSignUpFragmentToProfileFragment()
                     navController.navigate(direction)
                 }
 
@@ -22,4 +23,10 @@ class SignUpViewModel() : ViewModel() {
     fun setNavController(navController: NavController) {
         this.navController = navController
     }
+
+    fun goToSignIn(){
+        val directions = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
+        navController.navigate(directions)
+    }
+
 }

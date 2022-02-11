@@ -6,7 +6,6 @@
     <string name="basket">корзина</string>
     <string name="profile">профиль</string>
     <string name="make_an_order">Оформить заказ</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_title">Личный кабинет</string>
     <string name="full_name_profile_example">Фамилия Имя</string>
     <string name="phone_number_profile_example">+375(XX)-XXX-XX-XX</string>
@@ -16,12 +15,14 @@
     <string name="my_orders_profile">Мои заказы</string>
     <string name="amount_example_xx">XX</string>
     <string name="price_example_xx_xx">XX.XX BYN</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="first_name">First Name</string>
-    <string name="your_login">Your Username</string>
-    <string name="repeat_password">Repeat Password</string>
-    <string name="second_name">Second Name</string>
-    <string name="password">Password</string>
-    <string name="already_in_suharnica">Already in Suharnica? LOG IN</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="password">Пароль</string>
+    <string name="already_in_suharnica">Есть аккаунт? Войти</string>
     <string name="logo_image">logo image</string>
+    <string name="name">Имя и фамилия</string>
+    <string name="mail">Почта</string>
+    <string name="log_in">Войти</string>
+    <string name="new_to_sycharnica_sing_up">Нет аккаунта? Зарегестрироваться</string>
+    <string name="sing_inn">Вход</string>
 </resources>
