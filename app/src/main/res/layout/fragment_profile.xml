@@ -109,20 +109,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/bank_card_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/layout_margin_dimen"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/golos_text_regular"
-                android:text="@string/bank_card_number_profile"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewLine2" />
-
             <ImageButton
                 android:id="@+id/ib_edit_profile_info"
                 style="@android:style/Widget.Holo.Light.ImageButton"

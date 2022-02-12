@@ -176,6 +176,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
             mcvRoot.tag = catalogListItem
             ibBasket.tag = catalogListItem
 
+            //coil library. Loading images
             ivIcon.load(catalogListItem.imgUrl[0]) {
                 crossfade(true)
                 crossfade(2000)
@@ -231,6 +232,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 else -> String.format("%.0f", likes)
             }
 
+            //set likes color, if isLiked -> LimeColor
             if (catalogListItem.isLiked) {
                 val colorDarkLime = ContextCompat.getColor(
                     context,
