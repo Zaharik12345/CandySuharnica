@@ -25,8 +25,6 @@ class CatalogFragment : Fragment() {
     private lateinit var binding: FragmentCatalogBinding
 
     private val adapter = AdapterRVCatalog()
-    private var currentType = START_TYPE
-    private var currentQuery = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,19 +54,19 @@ class CatalogFragment : Fragment() {
 
     private fun setChips() {
         val listType = viewModel.getListType()
-        createChip(START_TYPE)
+        createChip(START_WORD)
         listType.forEach {
             createChip(it)
         }
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
-            val checkedChip = group[checkedId % listType.size]
+            val checkedChip = group[checkedId % (listType.size + 1)]
             currentType = (checkedChip as Chip).text.toString()
             notifyRecyclerViewItem()
         }
     }
 
     private fun notifyRecyclerViewItem() {
-        adapter.catalogItems = viewModel.getList(currentQuery,currentType)
+        adapter.catalogItems = viewModel.getList(currentQuery, currentType)
     }
 
     private fun createChip(str: String) {
@@ -78,7 +76,7 @@ class CatalogFragment : Fragment() {
         chip.chipStrokeWidth = 5f
         chip.isCheckable = true
         chip.isCheckedIconVisible = false
-        if (str == START_TYPE) chip.isChecked = true
+        if (str == currentType) chip.isChecked = true
         val colorStateListBackground =
             ContextCompat.getColorStateList(requireContext(), R.color.chip_background_color)
         chip.chipBackgroundColor = colorStateListBackground
@@ -90,8 +88,9 @@ class CatalogFragment : Fragment() {
     }
 
 
-
     companion object {
-        const val START_TYPE = "Все"
+        var currentType = "Все"
+        const val START_WORD = "Все"
+        var currentQuery = ""
     }
 }

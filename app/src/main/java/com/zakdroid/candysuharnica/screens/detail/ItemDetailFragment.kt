@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.FragmentDetailCatalogItemBinding
+import com.zakdroid.candysuharnica.databinding.FragmentLoginBinding
+import com.zakdroid.candysuharnica.screens.logInAndSignUp.LoginViewModel
 import com.zakdroid.candysuharnica.utils.adapters.AdapterRCImageSlider
 import com.zakdroid.candysuharnica.utils.adapters.AdapterRVOneLineString2Grid
 
@@ -19,7 +22,13 @@ class ItemDetailFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentDetailCatalogItemBinding
     private lateinit var catalogItem: CatalogItem
+    private lateinit var viewModel: ItemDetailViewModel
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(ItemDetailViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +41,6 @@ class ItemDetailFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setViewOnLayout(binding: FragmentDetailCatalogItemBinding) {
-
 
         with(binding) {
             tvLikes.text = catalogItem.likes.toString()
@@ -49,6 +57,9 @@ class ItemDetailFragment : Fragment(), View.OnClickListener {
 
             ibArrowBack.setOnClickListener(this@ItemDetailFragment)
             llSmileAndLikes.setOnClickListener(this@ItemDetailFragment)
+            ibShare.setOnClickListener(this@ItemDetailFragment)
+            ibMinusBasketItem.setOnClickListener(this@ItemDetailFragment)
+            ibPlusBasketItem.setOnClickListener(this@ItemDetailFragment)
         }
     }
 
@@ -64,6 +75,12 @@ class ItemDetailFragment : Fragment(), View.OnClickListener {
             }
             R.id.ll_smile_and_likes -> {
 
+            }
+            R.id.ib_plus_basket_item -> {
+                viewModel.addToBasket(catalogItem)
+            }
+            R.id.ib_minus_basket_item -> {
+                viewModel.removeToBasket(catalogItem)
             }
         }
     }

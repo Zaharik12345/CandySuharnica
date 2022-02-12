@@ -3,15 +3,33 @@ package com.zakdroid.candysuharnica.model.dbRoom.user
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 
 @Entity(tableName = "user")
 
-data class UserItemDbEntity(
+data class UserDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "first_name") val first_name: String,
-    @ColumnInfo(name = "second_name") val second_name: String,
-    @ColumnInfo(name = "mobile_number") val mobile_number: String,
-    @ColumnInfo(name = "address") val address: String
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "password") val password: String,
+   // @ColumnInfo(name = "mobile_number") val mobile_number: String,
+   // @ColumnInfo(name = "address") val address: String
 ) {
-    //fun toUserItem() //todo you need to create UserItem
+    fun toUser(): User = User(
+        id = id,
+        name = name,
+        password = password,
+
+    )
+
+    companion object {
+        fun fromUser(user: User): UserDbEntity {
+            return UserDbEntity(
+                id = 0,
+                name = user.name,
+                password = user.password,
+
+                )
+        }
+    }
 }

@@ -8,13 +8,13 @@ import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 
 @Entity(
     tableName = "basket",
-    foreignKeys = [ForeignKey(
+    /*foreignKeys = [ForeignKey(
         entity = CatalogItemDbEntity::class,
         parentColumns = ["id"],
         childColumns = ["product_id"],
         //onDelete = ForeignKey.CASCADE,
         onUpdate = ForeignKey.CASCADE
-    )]
+    )]*/
 )
 data class BasketDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
