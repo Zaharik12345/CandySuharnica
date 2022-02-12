@@ -127,7 +127,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
     }
 
     private fun addToBasket(catalogItem: CatalogItem) {
-
+        //add info to basket
         val basketItems = db.basketDao().getAll().map { it.toBasketItem() }
         for (item in basketItems) {
             if (item.productId == catalogItem.id) {
