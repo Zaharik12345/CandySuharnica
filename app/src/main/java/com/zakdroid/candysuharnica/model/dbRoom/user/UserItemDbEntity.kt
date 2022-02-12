@@ -18,8 +18,7 @@ data class UserDbEntity(
     fun toUser(): User = User(
         id = id,
         name = name,
-        password = password,
-
+        password = password
     )
 
     companion object {
@@ -27,8 +26,7 @@ data class UserDbEntity(
             return UserDbEntity(
                 id = 0,
                 name = user.name,
-                password = user.password,
-
+                password = user.password
                 )
         }
     }
