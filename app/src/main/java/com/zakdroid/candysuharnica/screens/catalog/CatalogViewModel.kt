@@ -17,7 +17,7 @@ class CatalogViewModel : ViewModel() {
     fun getList(query: String, type: String) =
         db.catalogDao()
             .getFromTypeAndSearch(
-                type = type.replace(CatalogFragment.START_TYPE,"%"),
+                type = type.replace(CatalogFragment.START_WORD,"%"),
                 query = query.plus("%"))
             .map { it.toCatalogItem() }
 

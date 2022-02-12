@@ -7,14 +7,14 @@ import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogDao
 import com.zakdroid.candysuharnica.model.dbRoom.user.UserDao
 import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketDbEntity
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
-import com.zakdroid.candysuharnica.model.dbRoom.user.UserItemDbEntity
+import com.zakdroid.candysuharnica.model.dbRoom.user.UserDbEntity
 
 
 @Database(
     version = 1,
     entities = [
         CatalogItemDbEntity::class,
-        UserItemDbEntity::class,
+        UserDbEntity::class,
         BasketDbEntity::class
     ]
 )

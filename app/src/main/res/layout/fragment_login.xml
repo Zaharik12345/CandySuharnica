@@ -45,7 +45,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_edit_login"
+                android:id="@+id/til_edit_mail"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_login">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_login"
+                    android:id="@+id/et_mail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
@@ -78,7 +78,7 @@
                 android:hint="@string/password"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_edit_login">
+                app:layout_constraintTop_toBottomOf="@id/til_edit_mail">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"

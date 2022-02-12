@@ -4,22 +4,15 @@ import androidx.room.*
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 
 @Dao
-interface UserDao{
-    @Query("SELECT * FROM catalog")
-    fun getAll(): List<UserItemDbEntity>
+interface UserDao {
 
-    @Query("DELETE FROM catalog")
-    fun deleteTable()
+    @Query("SELECT * FROM user")
+    fun signIn(): List<UserDbEntity>
 
-    @Query("SELECT * FROM catalog WHERE type LIKE :type AND name LIKE :query")
-    fun getFromTypeAndSearch(type:String,query: String) : List<CatalogItemDbEntity>
+    @Insert()
+    fun signUp(user:UserDbEntity)
 
-    @Insert
-    fun insert(item: CatalogItemDbEntity)
+    @Query("DELETE FROM user")
+    fun deleteUser()
 
-    @Update
-    fun update(item: CatalogItemDbEntity)
-
-    @Delete
-    fun delete(item: CatalogItemDbEntity)
 }

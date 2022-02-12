@@ -4,32 +4,32 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 
 @Entity(tableName = "user")
 
-data class UserItemDbEntity(
+data class UserDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "first_name") val first_name: String,
-    @ColumnInfo(name = "second_name") val second_name: String,
-    @ColumnInfo(name = "mobile_number") val mobile_number: String,
-    @ColumnInfo(name = "address") val address: String
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "password") val password: String,
+   // @ColumnInfo(name = "mobile_number") val mobile_number: String,
+   // @ColumnInfo(name = "address") val address: String
 ) {
-    fun toUserItem(): UserItem = UserItem(
+    fun toUser(): User = User(
         id = id,
-        first_name = first_name,
-        second_name = second_name,
-        mobile_number = mobile_number,
-        address = address
+        name = name,
+        password = password,
+
     )
-    companion object{
-        fun fromUserItem(item: UserItem): UserItemDbEntity{
-            return UserItemDbEntity(
+
+    companion object {
+        fun fromUser(user: User): UserDbEntity {
+            return UserDbEntity(
                 id = 0,
-                first_name = item.first_name,
-                second_name = item.second_name,
-                mobile_number = item.mobile_number,
-                address = item.address
-            )
+                name = user.name,
+                password = user.password,
+
+                )
         }
     }
 }

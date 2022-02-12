@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
-import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.databinding.FragmentLoginBinding
-import com.zakdroid.candysuharnica.screens.catalog.CatalogViewModel
 
 class LoginFragment: Fragment() {
 
@@ -26,14 +23,22 @@ class LoginFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding  = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.bSignUp.setOnClickListener {
-            viewModel.login(
-                binding.etLogin.text.toString(),
-                binding.etPassword.text.toString())
+            with(binding){
+                when {
+                    etMail.text.isNullOrBlank() -> etMail.error = "Введите почту"
+                    etPassword.text.isNullOrBlank() -> etPassword.error = "Введите пароль"
+                    else -> viewModel.login(
+                        binding.etMail.text.toString(),
+                        binding.etPassword.text.toString(),
+                        requireContext())
+                }
+            }
+
         }
         binding.clickableTvSignUp.setOnClickListener {
             viewModel.goToSignUp()
