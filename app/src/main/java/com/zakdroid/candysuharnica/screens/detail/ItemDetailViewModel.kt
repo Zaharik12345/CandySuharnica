@@ -11,11 +11,51 @@ class ItemDetailViewModel : ViewModel() {
     private val db = App.instance?.getDatabase() ?: throw Exception("error")
 
     fun addToBasket(catalogItem: CatalogItem) {
-        val basketItems = db.basketDao().getAll().map { it.toBasketItem() }
-        val itemDbEntity = BasketDbEntity.fromBasketItem(BasketItem())
+        val oldItem = db.basketDao().getItemFromId(catalogItem.id)
+        if (oldItem == null) {
+            val newItem = BasketDbEntity(
+                id = 0,
+                productId = catalogItem.id,
+                name = catalogItem.name,
+                count = 1,
+                imgURL = catalogItem.imgUrl[0],
+                amountPrice = catalogItem.price,
+                amountWeight = catalogItem.weight
+            )
+            db.basketDao().insert(newItem)
+        } else {
+            val newItem = BasketDbEntity(
+                id = oldItem.id,
+                productId = oldItem.productId,
+                name = oldItem.name,
+                count = oldItem.count + 1,
+                imgURL = oldItem.imgURL,
+                amountPrice = oldItem.amountPrice + catalogItem.price,
+                amountWeight = oldItem.amountWeight + catalogItem.weight
+            )
+            db.basketDao().update(newItem)
+        }
+
+
     }
 
     fun removeToBasket(catalogItem: CatalogItem) {
-        TODO("Not yet implemented")
+        val oldItem = db.basketDao().getItemFromId(catalogItem.id)
+        if (oldItem != null && getCountFromId(catalogItem.id) != "0" && getCountFromId(catalogItem.id) != "1") {
+            val newItem = BasketDbEntity(
+                id = oldItem.id,
+                productId = oldItem.productId,
+                name = oldItem.name,
+                count = oldItem.count - 1,
+                imgURL = oldItem.imgURL,
+                amountPrice = oldItem.amountPrice - catalogItem.price,
+                amountWeight = oldItem.amountWeight - catalogItem.weight
+            )
+            db.basketDao().update(newItem)
+        } else if (oldItem != null && getCountFromId(catalogItem.id) == "1") {
+            db.basketDao().delete(oldItem)
+        }
     }
+
+    fun getCountFromId(id: Int): CharSequence = db.basketDao().getCountFromId(id).toString()
 }

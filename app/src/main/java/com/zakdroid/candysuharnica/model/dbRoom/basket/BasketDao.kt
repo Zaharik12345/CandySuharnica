@@ -15,10 +15,16 @@ interface BasketDao {
     fun getCount() : Int
 
     @Query("SELECT SUM(price_sum) FROM basket")
-    fun getAmountPrice() : Int
+    fun getAmountPrice() : Double
 
     @Query("SELECT * FROM basket WHERE name LIKE :query")
     fun getListFromQuery(query: String): List<BasketDbEntity>
+
+    @Query("SELECT * FROM basket WHERE product_id = :id")
+    fun getItemFromId(id: Int) : BasketDbEntity?
+
+    @Query("SELECT count FROM basket WHERE product_id = :id")
+    fun getCountFromId(id: Int) : Int
 
     @Insert
     fun insert(item: BasketDbEntity)

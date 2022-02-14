@@ -20,11 +20,16 @@ class SplashViewModel(
     }
 
     fun fillDB(list: CatalogResponse) {
-        if(list.exception == null){
-            db.catalogDao().deleteTable()
-            for (item in list.catalogItems!!) {
-                val itemCatalog = CatalogItemDbEntity.fromCatalogItem(item)
-                db.catalogDao().insert(itemCatalog)
+        if(list.exception == null && list.catalogItems != null){
+            val oldList = db.catalogDao().getAll().map { it.toCatalogItem() }
+            val newList = list.catalogItems
+
+            if (oldList != newList){
+                db.catalogDao().deleteTable()
+                for (item in list.catalogItems!!) {
+                    val itemCatalog = CatalogItemDbEntity.fromCatalogItem(item)
+                    db.catalogDao().insert(itemCatalog)
+                }
             }
         }
     }

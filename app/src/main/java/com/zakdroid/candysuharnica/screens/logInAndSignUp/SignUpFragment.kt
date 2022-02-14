@@ -19,6 +19,7 @@ class SignUpFragment: Fragment() {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         viewModel.setNavController(findNavController())
+        viewModel.setContext(requireContext())
     }
 
     override fun onCreateView(

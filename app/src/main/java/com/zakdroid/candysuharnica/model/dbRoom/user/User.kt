@@ -8,6 +8,7 @@ data class User(
     val id: Int = 0,
     val name: String = "",
     val password: String = "",
+    val likesId: List<Int> = emptyList(),
     val mobile_number: String = "",
     val address: String = ""
 ):Parcelable

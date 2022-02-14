@@ -59,7 +59,8 @@
         android:background="?android:attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_baseline_share_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
 
     <View
         android:id="@+id/view"
@@ -266,7 +267,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/ib_minus_basket_item"
+                    android:id="@+id/ib_remove_from_basket_item"
                     style="@android:style/Widget.Holo.Light.ImageButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -282,22 +283,25 @@
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:background="@color/black"
-                    app:layout_constraintEnd_toStartOf="@id/ib_plus_basket_item"
-                    app:layout_constraintStart_toEndOf="@id/ib_minus_basket_item"
+                    app:layout_constraintEnd_toStartOf="@id/ib_add_basket_item"
+                    app:layout_constraintStart_toEndOf="@id/ib_remove_from_basket_item"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_amount_of_product_basket_item"
+                    android:id="@+id/tv_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/golos_text_demibold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:paddingLeft="1.5dp"
                     android:paddingRight="1.5dp"
                     android:text="@string/amount_example_xx"
+                    android:ems="1"
+                    android:gravity="center"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ib_minus_basket_item"
+                    app:layout_constraintStart_toEndOf="@id/ib_remove_from_basket_item"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
@@ -306,18 +310,18 @@
                     android:layout_height="1dp"
                     android:background="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/ib_plus_basket_item"
-                    app:layout_constraintStart_toEndOf="@id/ib_minus_basket_item" />
+                    app:layout_constraintEnd_toStartOf="@id/ib_add_basket_item"
+                    app:layout_constraintStart_toEndOf="@id/ib_remove_from_basket_item" />
 
                 <ImageButton
-                    android:id="@+id/ib_plus_basket_item"
+                    android:id="@+id/ib_add_basket_item"
                     style="@android:style/Widget.Holo.Light.ImageButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/black"
                     android:scaleType="center"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/tv_amount_of_product_basket_item"
+                    app:layout_constraintStart_toEndOf="@id/tv_count"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/big_plus_icon" />
 

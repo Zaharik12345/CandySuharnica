@@ -13,7 +13,7 @@
     <string name="bank_card_number_profile">Действующая \nкарта</string>
     <string name="speakable_text_edit">Edit</string>
     <string name="my_orders_profile">Мои заказы</string>
-    <string name="amount_example_xx">XX</string>
+    <string name="amount_example_xx">X</string>
     <string name="price_example_xx_xx">XX.XX BYN</string>
     <string name="sign_up">Регистрация</string>
     <string name="repeat_password">Повторите пароль</string>

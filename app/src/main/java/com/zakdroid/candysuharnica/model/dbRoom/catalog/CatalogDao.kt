@@ -1,23 +1,31 @@
 package com.zakdroid.candysuharnica.model.dbRoom.catalog
 
 import androidx.room.*
-import com.zakdroid.candysuharnica.model.dbRoom.user.UserItemDbEntity
 
 @Dao
 interface CatalogDao {
 
-    @Query("SELECT * FROM user")
-    fun getAll(): List<UserItemDbEntity>
+    @Query("SELECT * FROM catalog")
+    fun getAll(): List<CatalogItemDbEntity>
 
-    @Query("DELETE FROM user")
+    @Query("DELETE FROM catalog")
     fun deleteTable()
 
+    @Query("SELECT * FROM catalog WHERE type LIKE :type AND name LIKE :query")
+    fun getFromTypeAndSearch(type:String,query: String) : List<CatalogItemDbEntity>
+
+    @Query("SELECT weight FROM catalog WHERE id = :id")
+    fun getWeightFRomId(id: Int) : Int
+
+    @Query("SELECT price FROM catalog WHERE id = :id")
+    fun getPriceFRomId(id: Int) : Int
+
     @Insert
-    fun insert(item: UserItemDbEntity)
+    fun insert(item: CatalogItemDbEntity)
 
     @Update
-    fun update(item: UserItemDbEntity)
+    fun update(item: CatalogItemDbEntity)
 
     @Delete
-    fun delete(item: UserItemDbEntity)
+    fun delete(item: CatalogItemDbEntity)
 }

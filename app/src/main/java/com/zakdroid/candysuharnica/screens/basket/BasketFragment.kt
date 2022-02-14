@@ -17,16 +17,11 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
 
     private val adapter = AdapterRCBasket()
     private var currentQuery = ""
-    private lateinit var countDeserts: String
-    private lateinit var price: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(BasketViewModel::class.java)
-        with(viewModel) {
-            countDeserts = getCount().toString()
-            price = getAmountPrice().toString()
-        }
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,13 +30,8 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
 
         binding.rvBasket.adapter = adapter
 
-
-        binding.tvCountOfOrderItem.text = when (countDeserts) {
-            "1" -> countDeserts.plus(" десерт")
-            "2","3","4" -> countDeserts.plus(" десерта")
-            else -> countDeserts.plus(" десертов")
-        }
-        binding.tvPriceOfOrder.text = price.plus(" BYN")
+        notifyRecyclerViewItem()
+        notifyOrderPanel()
 
         binding.etSearch.addTextChangedListener {
             currentQuery = it.toString()
@@ -51,6 +41,19 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
 
     private fun notifyRecyclerViewItem() {
         adapter.basketItems = viewModel.getListFromQuery(currentQuery)
+    }
+
+    fun notifyOrderPanel() {
+
+        val countDeserts = viewModel.getCount().toString()
+        val price = viewModel.getAmountPrice().toString()
+
+        binding.tvCountOfOrderItem.text = when (countDeserts) {
+            "1" -> countDeserts.plus(" десерт")
+            "2", "3", "4" -> countDeserts.plus(" десерта")
+            else -> countDeserts.plus(" десертов")
+        }
+        binding.tvPriceOfOrder.text = price.plus(" BYN")
     }
 
 

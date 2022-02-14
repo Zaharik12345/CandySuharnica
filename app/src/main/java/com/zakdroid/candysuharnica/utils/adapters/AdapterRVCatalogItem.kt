@@ -1,7 +1,6 @@
 package com.zakdroid.candysuharnica.utils.adapters
 
 import android.content.Context
-import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.view.LayoutInflater
@@ -20,7 +19,6 @@ import com.zakdroid.candysuharnica.App
 import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
 import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketDbEntity
-import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketItem
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
@@ -61,7 +59,6 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
     private lateinit var catalogFragment: Fragment
 
     private lateinit var context: Context
-    private val resource = Resources.getSystem()
 
     private lateinit var binding: ItemCatalogBinding
 
@@ -94,16 +91,21 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
         when (v.id) {
             R.id.ll_smile_and_likes -> {
                 val list = mutableListOf<CatalogItem>()
+
+                //val likedList = db.userDao().getLikedList()
+
+
                 catalogItems.forEach { list.add(it.copy()) }
                 with(list.firstOrNull { it.id == catalogItem.id }) {
-                    if (this != null)
+                    if (this != null){
                         isLiked = !isLiked
+                        val catalogDBE = CatalogItemDbEntity(this.id,this.imgUrl,this.likes,this.isLiked,this.name,this.price,this.priceSale,this.weight,this.about,this.product_composition,this.nutritional_value,this.type)
+                        db.catalogDao().update(catalogDBE)
+                    }
                 }
                 catalogItems = list
-                /*val db = App.instance?.getDatabase() ?: throw Exception("error")
-                with(catalogItem) {isLiked = !isLiked}
-                val itemEntity = CatalogItemDbEntity.fromCatalogItem(catalogItem)
-                db.catalogDao().update(itemEntity)*/
+
+
             }
             R.id.mcv_root -> {
                 val direction = CatalogFragmentDirections.actionCatalogFragmentToItemDetailFragment(
@@ -126,47 +128,32 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
         }
     }
 
+
     private fun addToBasket(catalogItem: CatalogItem) {
-        //add info to basket
-        val basketItems = db.basketDao().getAll().map { it.toBasketItem() }
-        for (item in basketItems) {
-            if (item.productId == catalogItem.id) {
-                val basket = BasketDbEntity(
-                    id = item.id,
-                    productId = item.productId,
-                    count = item.count + 1,
-                    amountPrice = item.amountPrice + catalogItem.price,
-                    name = catalogItem.name,
-                    imgURL = catalogItem.imgUrl[0],
-                    amountWeight = item.amountWeight + catalogItem.weight
-                )
-                db.basketDao().update(basket)
-            } else {
-                val basket = BasketDbEntity(
-                    id = 0,
-                    productId = catalogItem.id,
-                    count = 1,
-                    amountPrice = catalogItem.price,
-                    name = catalogItem.name,
-                    imgURL = catalogItem.imgUrl[0],
-                    amountWeight = catalogItem.weight
-                )
-                db.basketDao().insert(basket)
-            }
-        }
-        if (basketItems.isEmpty()) db.basketDao().insert(
-            BasketDbEntity.fromBasketItem(
-                BasketItem(
-                    id = 0,
-                    productId = catalogItem.id,
-                    count = 1,
-                    amountPrice = catalogItem.price,
-                    name = catalogItem.name,
-                    imgURL = catalogItem.imgUrl[0],
-                    amountWeight = catalogItem.weight
-                )
+        val oldBasket = db.basketDao().getItemFromId(catalogItem.id)
+        if (oldBasket == null) {
+            val basket = BasketDbEntity(
+                id = 0,
+                productId = catalogItem.id,
+                count = 1,
+                amountPrice = catalogItem.price,
+                name = catalogItem.name,
+                imgURL = catalogItem.imgUrl[0],
+                amountWeight = catalogItem.weight
             )
-        )
+            db.basketDao().insert(basket)
+        } else {
+            val newBasket = BasketDbEntity(
+                id = oldBasket.id,
+                productId = oldBasket.productId,
+                name = oldBasket.name,
+                count = oldBasket.count + 1,
+                imgURL = oldBasket.imgURL,
+                amountPrice = oldBasket.amountPrice + catalogItem.price,
+                amountWeight = oldBasket.amountWeight + catalogItem.weight)
+
+            db.basketDao().update(newBasket)
+        }
     }
 
     private fun bindView(holder: CatalogViewHolder, catalogListItem: CatalogItem) {

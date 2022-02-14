@@ -15,4 +15,9 @@ interface UserDao {
     @Query("DELETE FROM user")
     fun deleteUser()
 
+    /*@Query("SELECT likes_id FROM user")
+    fun getLikedList(): List<Int>*/
+
+    @Update
+    fun update(user: UserDbEntity)
 }

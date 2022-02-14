@@ -39,7 +39,7 @@ data class BasketDbEntity(
     companion object {
         fun fromBasketItem(item: BasketItem): BasketDbEntity {
             return BasketDbEntity(
-                id = 0,
+                id = item.id,
                 productId = item.productId,
                 name = item.name,
                 count = item.count,

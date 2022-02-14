@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.zakdroid.candysuharnica.utils.StringArrayConverter
+import com.zakdroid.candysuharnica.utils.converters.StringArrayConverter
 
 @Entity(tableName = "catalog")
 @TypeConverters(StringArrayConverter::class)
@@ -13,6 +13,7 @@ data class CatalogItemDbEntity(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "imgUrl") val imgUrl: List<String>,
     @ColumnInfo(name = "likes") val likes: Int,
+    @ColumnInfo(name = "is_liked") var isLiked: Boolean,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "price") val price: Double,
     @ColumnInfo(name = "priceSale") val priceSale: Double,
@@ -32,6 +33,7 @@ data class CatalogItemDbEntity(
         price = price,
         priceSale = priceSale,
         likes = likes,
+        isLiked = isLiked,
         about = about,
         product_composition = product_composition,
         nutritional_value = nutritional_value
@@ -48,6 +50,7 @@ data class CatalogItemDbEntity(
                 price = item.price,
                 priceSale = item.priceSale,
                 likes = item.likes,
+                isLiked = item.isLiked,
                 about = item.about,
                 product_composition = item.product_composition,
                 nutritional_value = item.nutritional_value

@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.zakdroid.candysuharnica.R
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.FragmentDetailCatalogItemBinding
-import com.zakdroid.candysuharnica.databinding.FragmentLoginBinding
-import com.zakdroid.candysuharnica.screens.logInAndSignUp.LoginViewModel
 import com.zakdroid.candysuharnica.utils.adapters.AdapterRCImageSlider
 import com.zakdroid.candysuharnica.utils.adapters.AdapterRVOneLineString2Grid
 
@@ -55,16 +53,22 @@ class ItemDetailFragment : Fragment(), View.OnClickListener {
             rvComposition.adapter = AdapterRVOneLineString2Grid(catalogItem.product_composition)
             rvNutritional.adapter = AdapterRVOneLineString2Grid(catalogItem.nutritional_value)
 
+            updateTvCount()
+
             ibArrowBack.setOnClickListener(this@ItemDetailFragment)
             llSmileAndLikes.setOnClickListener(this@ItemDetailFragment)
             ibShare.setOnClickListener(this@ItemDetailFragment)
-            ibMinusBasketItem.setOnClickListener(this@ItemDetailFragment)
-            ibPlusBasketItem.setOnClickListener(this@ItemDetailFragment)
+            ibAddBasketItem.setOnClickListener(this@ItemDetailFragment)
+            ibAddBasketItem.setOnClickListener(this@ItemDetailFragment)
         }
     }
 
     private fun onGoBackButtonPressed() {
         findNavController().popBackStack()
+    }
+
+    private fun updateTvCount(){
+        binding.tvCount.text = viewModel.getCountFromId(catalogItem.id)
     }
 
     override fun onClick(v: View) {
@@ -76,11 +80,13 @@ class ItemDetailFragment : Fragment(), View.OnClickListener {
             R.id.ll_smile_and_likes -> {
 
             }
-            R.id.ib_plus_basket_item -> {
+            R.id.ib_add_basket_item -> {
                 viewModel.addToBasket(catalogItem)
+                updateTvCount()
             }
-            R.id.ib_minus_basket_item -> {
+            R.id.ib_remove_from_basket_item -> {
                 viewModel.removeToBasket(catalogItem)
+                updateTvCount()
             }
         }
     }
