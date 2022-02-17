@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.zakdroid.candysuharnica.App
 import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
+import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogResponse
 import com.zakdroid.candysuharnica.model.repository.CatalogRepository
@@ -23,15 +24,17 @@ class SplashViewModel(
         if(list.exception == null && list.catalogItems != null){
             val oldList = db.catalogDao().getAll().map { it.toCatalogItem() }
             val newList = list.catalogItems
-
             if (oldList != newList){
                 db.catalogDao().deleteTable()
                 for (item in list.catalogItems!!) {
                     val itemCatalog = CatalogItemDbEntity.fromCatalogItem(item)
+                    for (itemOld in oldList) {
+                        if(itemCatalog.about==itemOld.about)
+                        itemCatalog.isLiked = itemOld.isLiked
+                    }
                     db.catalogDao().insert(itemCatalog)
                 }
             }
         }
     }
-
 }

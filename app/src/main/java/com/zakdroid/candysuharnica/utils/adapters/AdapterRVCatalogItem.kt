@@ -114,6 +114,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 val navController = NavHostFragment.findNavController(catalogFragment)
                 navController.navigate(direction)
             }
+            //Animation of adding to the cart
             R.id.ib_basket -> {
                 val basket = v as ImageButton
                 basket.setImageResource(R.drawable.add_to_basket_anim)
@@ -155,7 +156,6 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
             db.basketDao().update(newBasket)
         }
     }
-
     private fun bindView(holder: CatalogViewHolder, catalogListItem: CatalogItem) {
         with(holder.binding) {
 
@@ -185,7 +185,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
             llSmileAndLikes.setOnClickListener(this@AdapterRVCatalog)
             ibBasket.setOnClickListener(this@AdapterRVCatalog)
             root.setOnClickListener(this@AdapterRVCatalog)
-
+/////////////////////////////////////////////////////////////////////////////////////////////
             //if catalogItem has sale
             if (catalogListItem.price != catalogListItem.priceSale) {
 
@@ -201,7 +201,6 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 )
                 mcvRoot.setBackgroundColor(colorLime)
                 ibBasket.setBackgroundColor(colorLime)
-
             } else {
                 tvPrice.text = catalogListItem.price.toString().plus(" BYN")
 
@@ -211,14 +210,14 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 mcvRoot.setBackgroundColor(Color.WHITE)
                 ibBasket.setBackgroundColor(Color.WHITE)
             }
-
+/////////////////////////////////////////////////////////////////////////////////////////////
             //set likes, if count > 999 then show 1.2 k for example
             tvLikes.text = when {
                 likes > 999 -> String.format("%.1f", likes / 1000)
                     .plus(" k") //rounding numbers
                 else -> String.format("%.0f", likes)
             }
-
+/////////////////////////////////////////////////////////////////////////////////////////////
             //set likes color, if isLiked -> LimeColor
             if (catalogListItem.isLiked) {
                 val colorDarkLime = ContextCompat.getColor(
@@ -235,6 +234,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 ivSmileLikes.setColorFilter(colorGrey)
                 tvLikes.setTextColor(colorGrey)
             }
+/////////////////////////////////////////////////////////////////////////////////////////////
         }
     }
 }

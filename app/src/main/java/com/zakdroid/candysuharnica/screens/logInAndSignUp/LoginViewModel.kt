@@ -25,7 +25,7 @@ class LoginViewModel : ViewModel() {
     fun login(username: String, password: String,context: Context?) {
         mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener {
             if (it.isSuccessful) {
-
+                //Toast.makeText(context,mAuth.currentUser?.uid.toString(),Toast.LENGTH_LONG).show()
                 if (user.isEmpty()) {
                     val createdUser =
                         UserDbEntity.fromUser(User(name = username, password = password))
