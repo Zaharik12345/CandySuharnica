@@ -21,6 +21,8 @@ import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
 import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketDbEntity
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
+import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketDao
+import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketItem
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 import com.zakdroid.candysuharnica.screens.catalog.CatalogFragmentDirections
 
@@ -235,6 +237,10 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
                 tvLikes.setTextColor(colorGrey)
             }
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+            if(db.basketDao().getItemFromId(catalogListItem.id)!=null){
+                ibBasket.setImageResource(R.drawable.icon_basket_active)
+            }
         }
     }
 }
