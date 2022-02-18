@@ -20,4 +20,8 @@ class ProfileViewModel:ViewModel() {
     fun setNavController(findNavController: NavController) {
         navController = findNavController
     }
+
+    fun fullName(){
+        val info = db.userDao().getFullName()
+    }
 }

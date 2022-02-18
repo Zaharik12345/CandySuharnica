@@ -92,22 +92,18 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
 
         when (v.id) {
             R.id.ll_smile_and_likes -> {
+                //change "isLiked" state
                 val list = mutableListOf<CatalogItem>()
-
-                //val likedList = db.userDao().getLikedList()
-
-
                 catalogItems.forEach { list.add(it.copy()) }
                 with(list.firstOrNull { it.id == catalogItem.id }) {
                     if (this != null){
-                        isLiked = !isLiked
+                        isLiked=!isLiked
+                        if (isLiked) likes++ else likes--
                         val catalogDBE = CatalogItemDbEntity(this.id,this.imgUrl,this.likes,this.isLiked,this.name,this.price,this.priceSale,this.weight,this.about,this.product_composition,this.nutritional_value,this.type)
                         db.catalogDao().update(catalogDBE)
                     }
                 }
                 catalogItems = list
-
-
             }
             R.id.mcv_root -> {
                 val direction = CatalogFragmentDirections.actionCatalogFragmentToItemDetailFragment(
