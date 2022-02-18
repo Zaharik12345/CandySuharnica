@@ -1,1 +1,1 @@
-<img src="main_frame.svg" alt="metrics" />
+<img src="main_frame.png" alt="metrics" />
