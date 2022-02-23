@@ -52,18 +52,17 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_product_icon_basket_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_title_basket_item"
             tools:text="@string/price_example_xx_xx" />
 
         <TextView
             android:id="@+id/tv_amount_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/layout_special_margin_dimen"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/ll_item_basket_buttons_and_text"
+            app:layout_constraintStart_toStartOf="@+id/tv_price_basket_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price_basket_item"
             tools:text="1925г" />
 
 
@@ -100,7 +99,7 @@
 
             <TextView
                 android:id="@+id/tv_count"
-                android:layout_width="wrap_content"
+                android:layout_width="28dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/golos_text_demibold"
