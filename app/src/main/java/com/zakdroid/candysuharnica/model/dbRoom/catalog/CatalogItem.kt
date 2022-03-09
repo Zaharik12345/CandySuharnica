@@ -1,6 +1,7 @@
 package com.zakdroid.candysuharnica.model.dbRoom.catalog
 
 import android.os.Parcelable
+import com.zakdroid.candysuharnica.model.dbRoom.Item
 import kotlinx.android.parcel.Parcelize
 
 
@@ -18,7 +19,7 @@ data class CatalogItem(
     var product_composition: List<String> = emptyList(),
     var nutritional_value: List<String> = emptyList(),
     var isLiked: Boolean = false
-) : Parcelable{
+) : Item{
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

@@ -21,8 +21,6 @@ import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
 import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketDbEntity
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItem
 import com.zakdroid.candysuharnica.databinding.ItemCatalogBinding
-import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketDao
-import com.zakdroid.candysuharnica.model.dbRoom.basket.BasketItem
 import com.zakdroid.candysuharnica.model.dbRoom.catalog.CatalogItemDbEntity
 import com.zakdroid.candysuharnica.screens.catalog.CatalogFragmentDirections
 
@@ -47,7 +45,7 @@ class CatalogItemsDiffUtil(
     }
 }
 
-class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClickListener {
+class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolderDepr>(), View.OnClickListener {
 
     var catalogItems: List<CatalogItem> = emptyList()
         set(newValue) {
@@ -66,7 +64,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
 
     private var db: AppDatabase = App.instance?.getDatabase() ?: throw Exception("error")
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatalogViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatalogViewHolderDepr {
         val inflater = LayoutInflater.from(parent.context)
         binding = ItemCatalogBinding.inflate(inflater, parent, false)
 
@@ -74,13 +72,13 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
         catalogFragment = parent.findFragment()
         binding.ivIcon.scaleType = ImageView.ScaleType.CENTER_CROP
 
-        return CatalogViewHolder(binding)
+        return CatalogViewHolderDepr(binding)
     }
 
-    override fun onBindViewHolder(holder: CatalogViewHolder, position: Int) {
+    override fun onBindViewHolder(holderDepr: CatalogViewHolderDepr, position: Int) {
 
         val catalogListItem = catalogItems[position]
-        bindView(holder, catalogListItem)
+        bindView(holderDepr, catalogListItem)
     }
 
 
@@ -154,8 +152,8 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
             db.basketDao().update(newBasket)
         }
     }
-    private fun bindView(holder: CatalogViewHolder, catalogListItem: CatalogItem) {
-        with(holder.binding) {
+    private fun bindView(holderDepr: CatalogViewHolderDepr, catalogListItem: CatalogItem) {
+        with(holderDepr.binding) {
 
             llSmileAndLikes.tag = catalogListItem
             mcvRoot.tag = catalogListItem
@@ -241,7 +239,7 @@ class AdapterRVCatalog : RecyclerView.Adapter<CatalogViewHolder>(), View.OnClick
     }
 }
 
-class CatalogViewHolder(
+class CatalogViewHolderDepr(
     val binding: ItemCatalogBinding
 ) : RecyclerView.ViewHolder(binding.root)
 
