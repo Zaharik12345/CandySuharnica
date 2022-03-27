@@ -56,4 +56,5 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         binding.tvPriceOfOrder.text = price.plus(" BYN")
     }
 
+
 }

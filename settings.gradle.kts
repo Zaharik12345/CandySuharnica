@@ -3,8 +3,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "Candy Suharnica"
-include ':app'
+include (":app")
+
+enableFeaturePreview("VERSION_CATALOGS")

@@ -25,6 +25,4 @@
     <string name="log_in">Войти</string>
     <string name="new_to_sycharnica_sing_up">Нет аккаунта? Зарегестрироваться</string>
     <string name="sing_inn">Вход</string>
-    <string name="mobile_number_text">Номер</string>
-    <string name="my_info_dialog_text">Личная информация</string>
 </resources>

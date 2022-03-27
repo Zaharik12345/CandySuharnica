@@ -21,7 +21,7 @@ class ProfileViewModel:ViewModel() {
         navController = findNavController
     }
 
-    fun fullName(){
+    /*fun fullName(){
         val info = db.userDao().getFullName()
-    }
+    }*/
 }
