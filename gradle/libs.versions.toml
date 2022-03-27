@@ -1,0 +1,71 @@
+[versions]
+firebase-realtime-version = "1.4.3"
+kotlin-version = "1.6.10"
+gradle-version = "7.1.2"
+google-services-version = "4.3.10"
+coroutines-version = "1.6.0"
+kotlinx-serialization-version = "1.3.2"
+firebase-bom-version = "29.0.0"
+firebase-version = "20.0.4"
+livedata-version = "2.4.1"
+coil-version = "1.3.2"
+room-version = "2.4.2"
+core-version = "1.7.0"
+appcompat-version = "1.4.1"
+material-version = "1.5.0"
+constraint-layout-version = "2.1.3"
+fragment-version = "1.4.1"
+navigation-version = "2.4.1"
+junit-version = "4.13.2"
+test-junit-version = "1.1.3"
+espresso-core-version = "3.4.0"
+navigation-safe-args-version = "2.5.0-alpha03"
+
+
+
+[libraries]
+
+firebase-realtime = { module = "dev.gitlive:firebase-database", version.ref = "firebase-realtime-version" }
+
+kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-version" }
+
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle-version" }
+
+google-services = { module = "com.google.gms:google-services", version.ref = "google-services-version" }
+
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines-version" }
+coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "coroutines-version" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines-version" }
+
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization-version" }
+kotlinx-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin-version" }
+
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom-version" }
+firebase-database = { module = "com.google.firebase:firebase-database-ktx", version.ref = "firebase-version" }
+firebase-auth = { module = "com.google.firebase:firebase-auth-ktx"}
+firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx"}
+
+livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "livedata-version" }
+
+coil = { module = "io.coil-kt:coil", version.ref = "coil-version" }
+
+room = { module = "androidx.room:room-ktx", version.ref = "room-version" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-version" }
+room-common = { module = "androidx.room:room-common", version.ref = "room-version" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-version" }
+
+core = { module = "androidx.core:core-ktx", version.ref = "core-version" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat-version" }
+material = { module = "com.google.android.material:material", version.ref = "material-version" }
+constraint-layout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint-layout-version" }
+fragment = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment-version" }
+
+
+navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation-version" }
+navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation-version" }
+
+navigation-safe-args = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigation-safe-args-version" }
+
+junit = { module = "junit:junit", version.ref = "junit-version" }
+test-junit = { module = "androidx.test.ext:junit", version.ref = "test-junit-version" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core-version" }
