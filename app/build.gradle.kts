@@ -22,8 +22,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         }
-    
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.2.0-alpha06"
+    }
     buildTypes {
         release {
             isMinifyEnabled=  false
@@ -76,8 +82,15 @@ dependencies {
     implementation (libs.constraint.layout)
     implementation (libs.fragment)
 
+    //navigation
     implementation (libs.navigation.fragment)
     implementation (libs.navigation.ui)
+    implementation(libs.navigation.safe.args)
+    implementation(libs.navigation.bottom)
+
+    implementation(libs.compose.material)
+    implementation(libs.compose.compiler)
+    implementation(libs.compose.ui)
 
     testImplementation (libs.junit)
     androidTestImplementation (libs.test.junit)
