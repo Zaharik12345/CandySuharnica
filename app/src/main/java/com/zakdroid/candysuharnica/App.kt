@@ -1,5 +1,6 @@
 package com.zakdroid.candysuharnica
 
+import android.annotation.SuppressLint
 import android.app.Application
 import androidx.room.Room
 import com.zakdroid.candysuharnica.model.dbRoom.AppDatabase
