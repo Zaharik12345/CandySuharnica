@@ -23,10 +23,14 @@ android {
 
         }
 
+
     buildTypes {
         release {
-            isMinifyEnabled=  false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -39,14 +43,14 @@ android {
 
     buildFeatures {
         viewBinding = true
-        compose  = true
+        compose = true
     }
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.1.1"
+    }
+
 }
-
-
 dependencies {
 
     // Import the Firebase
@@ -83,12 +87,6 @@ dependencies {
     //navigation
     implementation (libs.navigation.fragment)
     implementation (libs.navigation.ui)
-    implementation(libs.navigation.safe.args)
-    implementation(libs.navigation.bottom)
-
-    implementation(libs.compose.material)
-    implementation(libs.compose.compiler)
-    implementation(libs.compose.ui)
 
     testImplementation (libs.junit)
     androidTestImplementation (libs.test.junit)
