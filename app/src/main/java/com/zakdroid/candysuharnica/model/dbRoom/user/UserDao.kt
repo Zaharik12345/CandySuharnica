@@ -9,8 +9,8 @@ interface UserDao {
     @Query("SELECT * FROM user")
     fun signIn(): List<UserDbEntity>
 
-    @Query("SELECT name FROM user")
-    fun getFullName(): String
+    /*@Query("SELECT name FROM user")
+    fun getFullName(): UserDbEntity?*/
 
     @Insert()
     fun signUp(user:UserDbEntity)
