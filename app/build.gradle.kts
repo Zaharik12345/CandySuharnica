@@ -22,7 +22,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         }
-    
 
     buildTypes {
         release {
@@ -45,7 +44,6 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.1.1"
-    }
 }
 
 
@@ -81,13 +79,20 @@ dependencies {
     implementation (libs.constraint.layout)
     implementation (libs.fragment)
 
+
+    //navigation
     implementation (libs.navigation.fragment)
     implementation (libs.navigation.ui)
+    implementation(libs.navigation.safe.args)
+    implementation(libs.navigation.bottom)
+
+    implementation(libs.compose.material)
+    implementation(libs.compose.compiler)
+    implementation(libs.compose.ui)
 
     testImplementation (libs.junit)
     androidTestImplementation (libs.test.junit)
     androidTestImplementation (libs.espresso.core)
-
 
     implementation ("androidx.compose.ui:ui:1.1.1")
     implementation ("androidx.compose.material:material:1.1.1")
@@ -95,4 +100,5 @@ dependencies {
     implementation ("androidx.compose.ui:ui-tooling:1.1.1")
     implementation ("androidx.navigation:navigation-compose:2.4.1")
     implementation ("androidx.activity:activity-compose:1.4.0")
+
 }
