@@ -23,13 +23,6 @@ android {
 
         }
 
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.2.0-alpha06"
-    }
     buildTypes {
         release {
             isMinifyEnabled=  false
@@ -44,9 +37,13 @@ android {
         jvmTarget = "1.8"
     }
 
-    viewBinding {
-        isEnabled = true
+    buildFeatures {
+        viewBinding = true
+        compose  = true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.1.1"
 }
 
 
@@ -82,6 +79,7 @@ dependencies {
     implementation (libs.constraint.layout)
     implementation (libs.fragment)
 
+
     //navigation
     implementation (libs.navigation.fragment)
     implementation (libs.navigation.ui)
@@ -95,5 +93,12 @@ dependencies {
     testImplementation (libs.junit)
     androidTestImplementation (libs.test.junit)
     androidTestImplementation (libs.espresso.core)
+
+    implementation ("androidx.compose.ui:ui:1.1.1")
+    implementation ("androidx.compose.material:material:1.1.1")
+    implementation ("androidx.compose.ui:ui-tooling-preview:1.1.1")
+    implementation ("androidx.compose.ui:ui-tooling:1.1.1")
+    implementation ("androidx.navigation:navigation-compose:2.4.1")
+    implementation ("androidx.activity:activity-compose:1.4.0")
 
 }

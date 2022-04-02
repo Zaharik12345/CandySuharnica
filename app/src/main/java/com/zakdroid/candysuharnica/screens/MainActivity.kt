@@ -16,6 +16,10 @@ import com.zakdroid.candysuharnica.screens.catalog.CatalogViewModel
 import com.zakdroid.candysuharnica.screens.theme.BottomNavBarTheme
 
 
+import com.zakdroid.candysuharnica.screens.composeUI.MainScreen
+import com.zakdroid.candysuharnica.screens.composeUI.MainScreen2
+
+
 class MainActivity : ComponentActivity() {
 
     //private lateinit var viewModel: CatalogViewModel
@@ -23,14 +27,12 @@ class MainActivity : ComponentActivity() {
     //private lateinit var binding: ActivityMainBinding
     //private lateinit var navController: NavController
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BottomNavBarTheme{
-                MainScreen()
-            }
+            MainScreen2()
         }
-
 
 /*        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
