@@ -22,6 +22,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.zakdroid.candysuharnica.R
+import com.zakdroid.candysuharnica.screens.composeUI.profile.Profile
 
 
 @Composable
@@ -122,6 +123,7 @@ fun ProfileScreen() {
             textAlign = TextAlign.Center,
             fontSize = 25.sp
         )
+        Profile()
     }
 }
 

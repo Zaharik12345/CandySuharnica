@@ -31,4 +31,9 @@ sealed class Icons(
         R.drawable.ic_basket
     )
 
+    object Edit: Icons(
+        "edit",
+        R.drawable.edit_icon
+    )
+
 }
