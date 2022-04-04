@@ -1,10 +1,7 @@
 package com.zakdroid.candysuharnica.screens.composeUI
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -35,20 +32,22 @@ fun BottomNavigationBar(navController: NavController) {
         NavItems.Profile
     )
     BottomNavigation(
-        backgroundColor = colorResource(id = R.color.black),
-        contentColor = Color.Gray
+        backgroundColor = Color.White,
+        contentColor = Color.Black
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         items.forEach { item ->
             BottomNavigationItem(
-                modifier = Modifier.padding(top = 35.dp),
-                icon = { Icon(painterResource(id = item.icon), contentDescription = item.title) },
-                label = { Text(text = item.title) },
-                selectedContentColor = Color.White,
-                unselectedContentColor = Color.White.copy(0.4f),
-                alwaysShowLabel = true,
-                selected = false,
+                //modifier = Modifier.padding(top = 35.dp),
+                selectedContentColor = Color.Black,
+                unselectedContentColor = Color.Black.copy(0.4f),
+                selected = true,
+
+                icon = { Icon( //modifier = Modifier.fillMaxSize(),
+                    painter = painterResource(id = item.icon),
+                    contentDescription = item.title) },
+
                 onClick = {
                     navController.navigate(item.name) {
                         // Pop up to the start destination of the graph to
@@ -72,18 +71,17 @@ fun BottomNavigationBar(navController: NavController) {
 }
 
 @Composable
-fun HomeScreen() {
+fun CatalogScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(colorResource(id = R.color.grey))
-            .wrapContentSize(Alignment.Center)
     ) {
+        SearchBar()
         Text(
-            text = "Home View",
+            text = "Catalog",
             fontWeight = FontWeight.Bold,
-            color = Color.White,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
+            color = Color.Black,
+            modifier = Modifier.fillMaxSize(),
             textAlign = TextAlign.Center,
             fontSize = 25.sp
         )
@@ -91,18 +89,17 @@ fun HomeScreen() {
 }
 
 @Composable
-fun MusicScreen() {
+fun BasketScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(colorResource(id = R.color.grey))
-            .wrapContentSize(Alignment.Center)
     ) {
+        SearchBar()
         Text(
-            text = "Music View",
+            text = "Basket",
             fontWeight = FontWeight.Bold,
-            color = Color.White,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
+            color = Color.Black,
+            modifier = Modifier.fillMaxSize(),
             textAlign = TextAlign.Center,
             fontSize = 25.sp
         )
@@ -110,7 +107,7 @@ fun MusicScreen() {
 }
 
 @Composable
-fun MoviesScreen() {
+fun ProfileScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -118,10 +115,10 @@ fun MoviesScreen() {
             .wrapContentSize(Alignment.Center)
     ) {
         Text(
-            text = "Movies View",
+            text = "Profile",
             fontWeight = FontWeight.Bold,
-            color = Color.White,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
+            color = Color.Black,
+            modifier = Modifier.fillMaxSize(),
             textAlign = TextAlign.Center,
             fontSize = 25.sp
         )
@@ -132,13 +129,13 @@ fun MoviesScreen() {
 fun Navigation(navController: NavHostController) {
     NavHost(navController, startDestination = NavItems.Catalog.name) {
         composable(NavItems.Catalog.name) {
-            MainScreen()
+            CatalogScreen()
         }
         composable(NavItems.Basket.name) {
-            MusicScreen()
+            BasketScreen()
         }
         composable(NavItems.Profile.name) {
-            MoviesScreen()
+            ProfileScreen()
         }
     }
 }
@@ -149,7 +146,6 @@ fun Navigation(navController: NavHostController) {
 fun MainScreen2() {
     val navController = rememberNavController()
     Scaffold(
-        topBar = { SearchBar() },
         bottomBar = { BottomNavigationBar(navController) }
     ) {
         Navigation(navController)

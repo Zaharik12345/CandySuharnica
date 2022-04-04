@@ -15,4 +15,20 @@ sealed class Icons(
         "sort",
         R.drawable.ic_sort
     )
+
+    object Profile : Icons(
+        "sort",
+        R.drawable.ic_profile
+    )
+
+    object Catalog : Icons(
+        "sort",
+        R.drawable.ic_catalog
+    )
+
+    object Basket : Icons(
+        "sort",
+        R.drawable.ic_basket
+    )
+
 }
