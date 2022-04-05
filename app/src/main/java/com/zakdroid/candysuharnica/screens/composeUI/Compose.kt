@@ -119,7 +119,7 @@ fun ProfileScreen() {
             text = "Profile",
             fontWeight = FontWeight.Bold,
             color = Color.Black,
-            modifier = Modifier.fillMaxSize(),
+            //modifier = Modifier.fillMaxSize(),
             textAlign = TextAlign.Center,
             fontSize = 25.sp
         )
