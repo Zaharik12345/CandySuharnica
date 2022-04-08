@@ -35,5 +35,19 @@ sealed class Icons(
         "edit",
         R.drawable.edit_icon
     )
+    object SmallBasket: Icons(
+        "small basket",
+        R.drawable.small_basket_icon
+    )
+
+    object SmallPlus: Icons(
+        "small plus",
+        R.drawable.plus_list_icon
+    )
+
+    object Smile: Icons(
+        "small smile",
+        R.drawable.ic_baseline_tag_faces_black
+    )
 
 }

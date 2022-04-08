@@ -25,4 +25,7 @@
     <string name="log_in">Войти</string>
     <string name="new_to_sycharnica_sing_up">Нет аккаунта? Зарегестрироваться</string>
     <string name="sing_inn">Вход</string>
+    <string name="delivery_text">Ближайшая доставка через</string>
+    <string name="delivery_time">x часов</string>
+    <string name="favorites_desserts">Мои любимые десерты</string>
 </resources>

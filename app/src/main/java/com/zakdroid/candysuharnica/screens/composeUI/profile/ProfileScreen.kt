@@ -2,6 +2,7 @@ package com.zakdroid.candysuharnica.screens.composeUI.profile
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -25,6 +26,11 @@ fun Profile(){
         topCard()
         Divider(color = Color.Black, thickness = 2.dp)
         someInfo()
+        Divider(color = Color.Black, thickness = 2.dp)
+        myOrders()
+        Divider(color = Color.Black, thickness = 2.dp)
+        myFavorites()
+        Divider(color = Color.Black, thickness = 2.dp)
     }
 }
 
@@ -103,6 +109,60 @@ fun someInfo(){
             }
         }
     }
+}
+
+@Composable
+fun myOrders(){
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Icon(painter = painterResource(Icons.SmallBasket.image),
+                contentDescription = "small basket icon")
+            Text(text = stringResource(id = R.string.my_orders_profile),
+                fontFamily = GolosFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 14.sp)
+            Text(text = stringResource(id = R.string.delivery_text),
+                fontFamily = GolosFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 14.sp)
+            Text(text = stringResource(id = R.string.delivery_time),
+                fontFamily = GolosFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 14.sp)
+            IconButton(
+                onClick = {  }
+            ) {
+                Icon(
+                    painter = painterResource(Icons.SmallPlus.image),
+                    contentDescription = "plus icon")
+            }
+        }
+        LazyColumn{
+
+        }
+    }
+}
+
+@Composable
+fun myFavorites() {
+    Row(){
+        Icon(painter = painterResource(Icons.Smile.image),
+            contentDescription = "smile icon")
+        Text(text = stringResource(id = R.string.favorites_desserts),
+            fontFamily = GolosFontFamily,
+            fontWeight = FontWeight.Normal,
+            fontSize = 14.sp)
+        Text(text = stringResource(id = R.string.amount_example_xx),
+            fontFamily = GolosFontFamily,
+            fontWeight = FontWeight.Normal,
+            fontSize = 14.sp)
+        }
 }
 
 @Preview(showBackground = true)
