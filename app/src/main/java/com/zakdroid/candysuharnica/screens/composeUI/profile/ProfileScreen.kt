@@ -31,6 +31,7 @@ fun Profile(){
         Divider(color = Color.Black, thickness = 2.dp)
         myFavorites()
         Divider(color = Color.Black, thickness = 2.dp)
+        ourBakeries()
     }
 }
 
@@ -51,8 +52,10 @@ fun topCard(){
                     contentDescription = "Profile photo",
                     modifier = Modifier
                         .size(width = 100.dp, height = 90.dp)
+                        .weight(1f)
                 )
-            Column() {
+            Column(modifier = Modifier
+                .weight(3f)) {
                 Text(text = stringResource(id = R.string.full_name_profile_example),
                     fontFamily = GolosFontFamily,
                     fontWeight = FontWeight.SemiBold,
@@ -89,7 +92,9 @@ fun someInfo(){
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        Row(){
+        Row(
+            horizontalArrangement = Arrangement.SpaceAround
+        ){
             Text(text = stringResource(id = R.string.bank_card_number_profile),
                 fontFamily = GolosFontFamily,
                 fontWeight = FontWeight.Normal,
@@ -119,24 +124,30 @@ fun myOrders(){
     ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(painter = painterResource(Icons.SmallBasket.image),
-                contentDescription = "small basket icon")
+                contentDescription = "small basket icon",
+                modifier = Modifier.weight(1f))
             Text(text = stringResource(id = R.string.my_orders_profile),
                 fontFamily = GolosFontFamily,
                 fontWeight = FontWeight.Normal,
-                fontSize = 14.sp)
+                fontSize = 14.sp,
+                modifier = Modifier.weight(4f))
             Text(text = stringResource(id = R.string.delivery_text),
                 fontFamily = GolosFontFamily,
                 fontWeight = FontWeight.Normal,
-                fontSize = 14.sp)
+                fontSize = 14.sp,
+                modifier = Modifier.weight(4f))
             Text(text = stringResource(id = R.string.delivery_time),
                 fontFamily = GolosFontFamily,
                 fontWeight = FontWeight.Normal,
-                fontSize = 14.sp)
+                fontSize = 14.sp,
+                modifier = Modifier.weight(2f))
             IconButton(
-                onClick = {  }
+                onClick = {  },
+                modifier = Modifier.weight(1f)
             ) {
                 Icon(
                     painter = painterResource(Icons.SmallPlus.image),
@@ -153,16 +164,24 @@ fun myOrders(){
 fun myFavorites() {
     Row(){
         Icon(painter = painterResource(Icons.Smile.image),
-            contentDescription = "smile icon")
+            contentDescription = "smile icon",
+            modifier = Modifier.weight(1f))
         Text(text = stringResource(id = R.string.favorites_desserts),
             fontFamily = GolosFontFamily,
             fontWeight = FontWeight.Normal,
-            fontSize = 14.sp)
+            fontSize = 14.sp,
+            modifier = Modifier.weight(4f))
         Text(text = stringResource(id = R.string.amount_example_xx),
             fontFamily = GolosFontFamily,
             fontWeight = FontWeight.Normal,
-            fontSize = 14.sp)
+            fontSize = 14.sp,
+            modifier = Modifier.weight(1f))
         }
+}
+
+@Composable
+fun ourBakeries(){
+
 }
 
 @Preview(showBackground = true)
